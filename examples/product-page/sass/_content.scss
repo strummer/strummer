@@ -1,0 +1,66 @@
+/* Content Partial - contents of each product box */
+
+content.product {
+  // Generic styles that apply to all products
+  position: relative;
+  display:block;
+  height: 500px;
+
+  & img {
+    // Generic img styles. Positioning will be overridden below.
+    width: 500px;
+    height: 400px;
+    padding-top: 3%
+    
+  }
+
+  .metadata {
+    width: 30%;
+    padding-top: 11%;
+  }
+
+  button {
+    margin: 0 40% 0 40%;
+  }
+
+  // Product-specific styles
+
+  &#rinse {
+    color: $text-dark;
+    background: $bg-rinse;
+    img {
+      float:left;
+      padding-left: 10%
+    }
+    .metadata {
+      float:right;
+      padding-right: 11%;
+    }
+  }
+  
+  &#cleanse {
+    color: $text-dark;
+    background: $bg-cleanse;
+    img {
+      float:right;
+      padding-right: 8%
+    }
+    .metadata {
+      float:left;
+      padding-left: 14%
+    }
+  }
+  
+  &#leavein {
+    color: $text-dark;
+    background: $bg-leavein;
+    img {
+      float:left;
+      padding-left:10%;
+    }
+    .metadata {
+      float:right;
+      padding-right: 11%;
+    }
+  }
+}

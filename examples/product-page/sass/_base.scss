@@ -1,0 +1,40 @@
+/* Base styles */
+
+
+body {
+	// Text
+	font-family: 'Georgia, serif';
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-size: 1.3125em;
+	line-height: 1.52381em;
+	color: $text-light;
+  background: $bg;
+}
+
+.contrast {
+	// Used when text sits on top of dark colors
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+	color: $text-light;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2.3em;
+	padding: 0 0 5% 0;
+	text-align: center;
+}
+
+h3 {
+	font-size: 2.1em;
+	padding: 0 0 3% 0;
+	text-align: center;
+}
+
+p {
+	padding: 0 0 5% 0;
+}

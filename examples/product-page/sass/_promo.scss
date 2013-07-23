@@ -1,0 +1,29 @@
+/* Promo Partial - contents of each promo box */
+content.promo {
+  position: relative;
+  display:block;
+  height: 400px;  // Slightly shorter to vary the eye
+
+  color: $text-dark;
+  background: $bg-promo;
+
+  & ul {
+    padding: 5% 35% 2% 39%;
+    display: inline-block;
+    li {
+      display:inline-block;
+      float: left;
+      // padding: 1%;
+      & img {
+        width: 100px;
+        height: 80px;
+      }
+    }
+  }
+
+  & button {
+    margin: 0 auto;
+    width: 10%;
+  }
+  
+}
