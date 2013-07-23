@@ -1,4 +1,4 @@
 Sample Project: product-page
 ========
 
-# An example of a promotional site created using Strummer.
+### An example of a promotional site created using Strummer.
