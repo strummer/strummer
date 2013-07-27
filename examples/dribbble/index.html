@@ -1,0 +1,69 @@
+<!-- Homepage for Dribbble example -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <!-- Begin Navigation -->
+    <header>
+      <a href="home.url()"><img object="logo"></a>
+        <ul class="mainnav">
+          <li id="shots" class="selected">
+            <a href="shots.url()">Shots</a>
+          </li>
+          <li id="designers"> 
+            <a href="designers.url()">Designers</a>
+          </li>
+          <li id="about">
+            <a href="about.url()"></a>
+          </li>                        
+        </ul>
+    </header>
+    <!-- End Navigation -->
+
+    <section class="main">
+      <div class="promo">
+        <strong>What are you working on?</strong> Dribbble is show and tell for designers.
+        <button class="primary">Sign up</button>
+      </div>
+      <ul class="subnav">
+        <li id="popular">
+          <a object"popular.url()">Popular</a>
+        </li>
+        <li id="everyone">
+          <a href="everyone.url()">Everyone</a>
+        </li>
+        <li id="debuts">
+          <a href="debuts.url()">Debuts</a>
+        </li>
+      </ul>
+      <div class="shots grid">
+        <ul>
+          <li id="shot.id" object="shot">
+            <div class="thumbnail image"> <!-- Need to support a hover state here which swaps the div content -->
+              <a href="shot.url()"><img object="shot.image"></a>
+            </div>
+            <aside class="details">
+              <div id="views">
+                <img src="/static/icons/views.jpg">
+                {{shot.views}}
+              </div>
+              <div id="comments">
+                <a href="shot.comments.url()">
+                  <img src="/static/icons/comments.jpg">
+                  {{shot.comments}}
+                </a>
+              </div>
+              <div id="likes">
+                <a href="shot.likes.url()">
+                  <img src="/static/icons/likes.jpg">
+                  {{shot.likes}}
+                </a>
+              </div>              
+            </aside>
+          </li>
+        </ul>
+  </body>
