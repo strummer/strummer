@@ -4,12 +4,19 @@
 <html>
   <head>
     <title>Strummmer - a Dribbble clone example.</title>
+    <!-- Skeleton CSS/Grid template -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- Custom CSS goes here -->
+    <link rel="stylesheet" href="css/strummmer.css">
   </head>
 
   <body>
     <!-- Begin Navigation - Note this is present on every page. -->
-    <header>
-      <a href="home.url()"><img object="logo"></a>
+    <header class="full-width clearfix">
+      <section class="container">
+        <a href="home.url()"><img id="logo" object="logo" src="/images/logo.png"></a>
         <ul class="mainnav">
           <li id="shots" class="selected">
             <a href="shots.url()">Shots</a>
@@ -18,48 +25,49 @@
             <a href="designers.url()">Designers</a>
           </li>
           <li id="about">
-            <a href="about.url()"></a>
+            <a href="about.url()">About</a>
           </li>                        
         </ul>
+      </section>
     </header>
     <!-- End Navigation -->
 
-    <section class="main">
-      <div class="promo">
+    <section class="main container">
+      <div class="promo sixteen columns">
         <strong>What are you working on?</strong> Dribbble is show and tell for designers.
-        <button class="primary">Sign up</button>
+        <a href="#" class="primary button">Sign up</a>
       </div>
-      <ul class="subnav">
-        <li id="popular">
+      <ul class="subnav sixteen columns">
+        <li id="popular" class="two columns" >
           <a object"popular.url()">Popular</a>
         </li>
-        <li id="everyone">
+        <li id="everyone" class="two columns">
           <a href="everyone.url()">Everyone</a>
         </li>
-        <li id="debuts">
+        <li id="debuts" class="two columns">
           <a href="debuts.url()">Debuts</a>
         </li>
       </ul>
-      <div class="shots grid" object="shots">
+      <div class="shots grid sixteen columns" object="shots">
         <ol object="shots" sort="favorites" time="24h" order="desc">  <!-- When we return a list of shots, we need to define a way to sort them (by favorites), the timespan to query (i.e. most favorites in past 24h), and an order to return them in. This is a complex one and will require some sort of simplified query language. I took a stab at one above. -->
-          <li id="shot.id" object="shot">
+          <li id="shot.id" class="three columns" object="shot">
             <div class="thumbnail image"> <!-- Need to support a hover state here which swaps the div content -->
               <a href="shot.url()"><img object="shot.image"></a>
             </div>
             <aside class="details">
               <div id="views">
-                <img src="/static/icons/views.jpg">
+                <img src="/images/icons/views.jpg">
                 {{shot.views}}  <!-- Since we're within the shot object in the shots list, we need to grab the 'shot' views -->
               </div>
               <div id="comments">
                 <a href="shot.comments.url()">
-                  <img src="/static/icons/comments.jpg">
+                  <img src="/images/icons/comments.jpg">
                   {{shot.comments}}
                 </a>
               </div>
               <div id="likes">
                 <a href="shot.likes.url()">
-                  <img src="/static/icons/likes.jpg">
+                  <img src="/images/icons/likes.jpg">
                   {{shot.likes}}
                 </a>
               </div>  
@@ -70,17 +78,19 @@
             </div>
           </li>
         </ol>
-        <nav class="grid">
+        <nav class="grid sixteen columns">
           <!-- Navigation for the grid of shots (Older/Newer) -->
-          if(shots.page > 0)  <!-- We only display 'newer' if we aren't on page 1 -->
-            <div class="newer">
-              <img src="/static/icons/left-arrow.jpg">
+          <!-- if(shots.page > 0) -->
+            <!-- We only display 'newer' if we aren't on page 1 -->
+            <div class="newer two columns">
+              <img src="/images/icons/left-arrow.jpg">
               Newer
             </div>
-          if (shots.page < shots.length)  <!-- We always display 'older' unless there are no more pages -->
-            <div class="older">
+          <!-- if (shots.page < shots.length) -->
+          <!-- We always display 'older' unless there are no more pages -->
+            <div class="older two columns">
               Older
-              <img src="/static/icons/right-arrow.jpg">
+              <img src="/images/icons/right-arrow.jpg">
             </div>
         </nav>
       </div>
