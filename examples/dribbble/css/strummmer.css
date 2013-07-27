@@ -42,6 +42,12 @@ header .selected a {
 }
 /* End Selected Nav Item */
 
+#search {
+  position: absolute;
+  top: -5px;
+  right: 30px;
+}
+
 #logo {
   float: left;
   width: 100px;
