@@ -7,7 +7,7 @@
   </head>
 
   <body>
-    <!-- Begin Navigation -->
+    <!-- Begin Navigation - Note this is present on every page. -->
     <header>
       <a href="home.url()"><img object="logo"></a>
         <ul class="mainnav">
@@ -40,8 +40,8 @@
           <a href="debuts.url()">Debuts</a>
         </li>
       </ul>
-      <div class="shots grid">
-        <ul>
+      <div class="shots grid" object="shots">
+        <ul object="shots" sort="favorites" time="24h" order="desc">  <!-- When we return a list of shots, we need to define a way to sort them (by favorites), the timespan to query (i.e. most favorites in past 24h), and an order to return them in. This is a complex one and will require some sort of simplified query language. I took a stab at one above. -->
           <li id="shot.id" object="shot">
             <div class="thumbnail image"> <!-- Need to support a hover state here which swaps the div content -->
               <a href="shot.url()"><img object="shot.image"></a>
@@ -49,7 +49,7 @@
             <aside class="details">
               <div id="views">
                 <img src="/static/icons/views.jpg">
-                {{shot.views}}
+                {{shot.views}}  <!-- Since we're within the shot object in the shots list, we need to grab the 'shot' views -->
               </div>
               <div id="comments">
                 <a href="shot.comments.url()">
@@ -62,8 +62,26 @@
                   <img src="/static/icons/likes.jpg">
                   {{shot.likes}}
                 </a>
-              </div>              
+              </div>  
             </aside>
+            <div class="author" object"shot.author">  <!-- Can I grab the shot's author here as an object? -->
+              <img class="thumbnail" src="{{author.thumbnail}}">  <!-- if the above is true, I should be able to reference the thumbnail for an author -->
+              <a href="author.url()">{{author.name}}</a> <!-- and the name for an author as well somehow -->
+            </div>
           </li>
         </ul>
+        <nav class="grid">
+          <!-- Navigation for the grid of shots (Older/Newer) -->
+          if(shots.page > 0)  <!-- We only display 'newer' if we aren't on page 1 -->
+            <div class="newer">
+              <img src="/static/icons/left-arrow.jpg">
+              Newer
+            </div>
+          if (shots.page < shots.length)  <!-- We always display 'older' unless there are no more pages -->
+            <div class="older">
+              Older
+              <img src="/static/icons/right-arrow.jpg">
+            </div>
+        </nav>
+      </div>
   </body>
