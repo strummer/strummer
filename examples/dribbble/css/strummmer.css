@@ -74,23 +74,44 @@ header .selected a {
   border-top-right-radius: 0;
 }
 
-.promo a {
+a.button {
   position: relative;
+  background: lightgrey;
   top -1px;
-  color: #fff;
-  background: #ea4c89;
-  margin: 0 0 0 5px;
-  padding: 5px 12px;
-  font-size: 12px;
+
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   border: none;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.promo a:hover {
-  text-decoration: none;
-  color: #fff;
-  background: #df3e7b;
+a.button:hover {
   border: none;
+  background: #df3e7b;
+  color: #fff;
+  font-size: 14px;
+}
+
+.promo a.button {
+  background: #ea4c89;
+  color: #fff;
+
+  margin: 0 0 0 5px;
+  padding: 5px 12px;
+  font-size: 12px;
+}
+
+.promo a.button:hover {
+  background: #df3e7b;
+  color: #fff;
+
+  margin: 0 0 0 5px;
+  padding: 5px 12px;
+  font-size: 12px;
+}
+
+.pagination {
+  text-align: center;
 }

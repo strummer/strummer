@@ -83,19 +83,21 @@
             </div>
           </li>
         </ol>
-        <nav class="grid sixteen columns">
+        <nav class="pagination sixteen columns">
           <!-- Navigation for the grid of shots (Older/Newer) -->
           <!-- if(shots.page > 0) -->
             <!-- We only display 'newer' if we aren't on page 1 -->
             <div class="newer two columns">
-              <img src="/images/icons/left-arrow.jpg">
-              Newer
+              <a href="#" class="button">
+                ← Newer
+              </a>
             </div>
           <!-- if (shots.page < shots.length) -->
           <!-- We always display 'older' unless there are no more pages -->
             <div class="older two columns">
-              Older
-              <img src="/images/icons/right-arrow.jpg">
+              <a href="#" class="button">
+                Older →
+              </a>
             </div>
         </nav>
       </div>
