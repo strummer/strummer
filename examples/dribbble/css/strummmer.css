@@ -112,6 +112,35 @@ a.button:hover {
   font-size: 12px;
 }
 
+
+/* Subnav */
+.subnav {
+  border-bottom: 1px solid #dddddd;
+}
+
+.subnav li {
+  padding: 15px 20px 5px 0;
+  font-size: 14px;
+}
+
+.subnav a {
+  text-decoration: none;
+  color: #999999;
+}
+
+.subnav a:hover {
+  color: #444444;
+}
+
+.subnav .selected a {
+  font-weight: bold;
+  color: #444444;
+}
+
+
+
+/* Pagination */
+
 .pagination {
   text-align: center;
 }
