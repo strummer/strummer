@@ -53,24 +53,24 @@
           <a href="debuts.url()">Debuts</a>
         </li>
       </ul>
-      <div class="grid sixteen columns" object="shots">
+      <div class="grid" object="shots">
         <ol object="shots" class="shots" sort="favorites" time="24h" order="desc">  <!-- When we return a list of shots, we need to define a way to sort them (by favorites), the timespan to query (i.e. most favorites in past 24h), and an order to return them in. This is a complex one and will require some sort of simplified query language. I took a stab at one above. -->
-          <li id="shot.id" class="shot four columns" object="shot">
+          <li id="shot.id" class="shot" object="shot">
             <div class="thumbnail image"> <!-- Need to support a hover state here which swaps the div content -->
               <a href="shot.url()"><img class ="thumbnail" src="/images/sample-shot-thumbnail.png"></a>  <!-- Can I get the thumbnail image here? e.g. shot.image -->
             </div>
             <aside class="details">
-              <div id="views">
+              <div id="views" class="stats">
                 <img src="/images/icons/views.jpg">
                 {{shot.views}}  <!-- Since we're within the shot object in the shots list, we need to grab the 'shot' views -->
               </div>
-              <div id="comments">
+              <div id="comments" class="stats">
                 <a href="shot.comments.url()">
                   <img src="/images/icons/comments.jpg">
                   {{shot.comments}}
                 </a>
               </div>
-              <div id="likes">
+              <div id="likes" class="stats">
                 <a href="shot.likes.url()">
                   <img src="/images/icons/likes.jpg">
                   {{shot.likes}}
