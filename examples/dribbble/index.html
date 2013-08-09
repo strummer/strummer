@@ -36,7 +36,7 @@
       </section>
     </header>
     <!-- End Navigation -->
-    
+
     <section class="main container">
       <div class="promo sixteen columns">
         <strong>What are you working on?</strong> Dribbble is show and tell for designers.
@@ -53,11 +53,11 @@
           <a href="debuts.url()">Debuts</a>
         </li>
       </ul>
-      <div class="shots grid sixteen columns" object="shots">
-        <ol object="shots" sort="favorites" time="24h" order="desc">  <!-- When we return a list of shots, we need to define a way to sort them (by favorites), the timespan to query (i.e. most favorites in past 24h), and an order to return them in. This is a complex one and will require some sort of simplified query language. I took a stab at one above. -->
-          <li id="shot.id" class="three columns" object="shot">
+      <div class="grid sixteen columns" object="shots">
+        <ol object="shots" class="shots" sort="favorites" time="24h" order="desc">  <!-- When we return a list of shots, we need to define a way to sort them (by favorites), the timespan to query (i.e. most favorites in past 24h), and an order to return them in. This is a complex one and will require some sort of simplified query language. I took a stab at one above. -->
+          <li id="shot.id" class="shot four columns" object="shot">
             <div class="thumbnail image"> <!-- Need to support a hover state here which swaps the div content -->
-              <a href="shot.url()"><img object="shot.image"></a>
+              <a href="shot.url()"><img class ="thumbnail" src="/images/sample-shot-thumbnail.png"></a>  <!-- Can I get the thumbnail image here? e.g. shot.image -->
             </div>
             <aside class="details">
               <div id="views">
@@ -78,7 +78,7 @@
               </div>  
             </aside>
             <div class="author" object"shot.author">  <!-- Can I grab the shot's author here as an object? -->
-              <img class="thumbnail" src="{{author.thumbnail}}">  <!-- if the above is true, I should be able to reference the thumbnail for an author -->
+              <img class="thumbnail" src="">  <!-- if the above is true, I should be able to reference the thumbnail for an author in the src, perhaps {{author.thumbnail}} -->
               <a href="author.url()">{{author.name}}</a> <!-- and the name for an author as well somehow -->
             </div>
           </li>
