@@ -18,6 +18,8 @@ To access Builder, hit '~' (like the Quake console!) or click on the icon that a
 
 This is what your data looks like based on your current changes to your HTML. Browse through the data structures you've created and discover the variables and information you have access to on each page.
 
+![Builder - Settings](wireframes/builder-structures.png?raw=true)
+
 ### 'Ipsum' Mode
 
 Want to see what your new layout would look like with some sample data? Turn on 'Ipsum' Mode and we'll populate your page with random length dummy data that meets your specifications.
@@ -31,3 +33,5 @@ Swap between your current site and your proposed changes. Make sure everything l
 ## Settings
 
 Update your settings for your site such as Domain Name.
+
+![Builder - Settings](wireframes/builder-settings-success.png?raw=true)
