@@ -8,12 +8,6 @@ Strummer is a framework for **designers** to build web apps using simple HTML co
 Bootstrap allows engineers to build without designers, what would Bootstrap for designers look like?
 
 
-# Getting Started
-
-To access Builder, hit '~' (like the Quake console!) or click on the icon that appears for signed-in users with the 'Admin' flag set.
-
-
-
 # Features
 
 ## It's just HTML
