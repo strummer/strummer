@@ -3,7 +3,7 @@ strummer
 
 We believe that developers shouldn't be the only ones that can build great web apps.
 
-Strummer is a framework for designers to build web apps using simple HTML commands. You worry about the View, we'll take care of the rest.
+Strummer is a framework for **designers** to build web apps using simple HTML commands. You worry about the View, we'll take care of the rest.
 
 Bootstrap allows engineers to build without designers, what would Bootstrap for designers look like?
 
