@@ -25,6 +25,7 @@ Write HTML just like you normally would. Strummer doesn’t require that you lea
 <ol object="shots" sort="favorites" time="24h" order="desc">
   <li object="shot" class="three columns">
     <img object="thumbnail" />
+    <a object="attachment" />
     <div class="stats">
       <p object="views" />
       <p object="comments" />
