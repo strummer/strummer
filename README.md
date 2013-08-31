@@ -39,6 +39,7 @@ Write HTML just like you normally would. Strummer doesn’t require that you lea
 ````
 
 **Output**
+
 ![Example Shot](http://cl.ly/image/291G2h0P0r0R/Screen%20Shot%202013-08-31%20at%2010.09.40%20AM.png)
 
 ## Builder
