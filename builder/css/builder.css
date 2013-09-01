@@ -1,0 +1,35 @@
+/* Base CSS styles for Builder prototype */
+body {
+  margin: 0;
+}
+
+nav {
+  position:absolute;
+  top:0;
+  width: 100%;
+  overflow:hidden;
+}
+
+nav.selected {
+  background-color: lightgreen;
+}
+
+.button.ui {
+  float:right;
+  padding: 10px;
+}
+
+.button.ui a {
+  font-size: 20px;
+  color: green;
+  text-decoration: none;
+}
+
+.button.ui.selected a {
+  color: black;
+  text-decoration: underline;
+}
+
+.content {
+  margin: 20% 30% 20% 30%;
+}
