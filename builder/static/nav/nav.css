@@ -64,6 +64,7 @@ nav nav.active {
   background-color: darkgreen;
   color: white;
   clear: both;
+  width: 111%;
 }
 
 .submenu .pane {
