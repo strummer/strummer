@@ -55,6 +55,25 @@ var app = angular.module('builder', []).
         '</div>',
       replace: true
     };
+  }).
+  directive('structure', function() {
+    return {
+      restrict: 'E',
+      transclude: true,
+      scope: { object: '@', link: '@', type: '@' },
+      controller: function($scope, $element, $log) {
+        var structures = $scope.structures = {};
+        $scope.log = $log;
+        structures += $scope;
+        $scope.log.log(structures);
+      },
+      template:
+        '<div class="structure {{object}}">{{object}} {{type}} {{link}}' +
+          '<div class="structure" ng-repeat="structure in structures">' +
+          '</div>' +
+        '</div>',
+      replace: true
+    };
   });
 
 

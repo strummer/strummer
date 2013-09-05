@@ -25,7 +25,12 @@ More info: https://github.com/strummer/strummer/tree/builder/builder
     <pane title="Builder" symbol="@">
       <menu class="submenu">
         <pane title="Structures" symbol="Structures">
-          Structures sub-nav!
+          <structure object="comments" type="list">
+            <!-- Need to find a way to create recursive/tree directives -->
+            <structure object="author" link="authors"></structure>
+            <structure object="content" type="text"></structure>
+            <structure object="timestamp" type="time"></structure>
+          </structure>
         </pane>
         <pane title="Publish" symbol="Publish">
           Publish sub-nav!
