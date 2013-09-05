@@ -12,6 +12,7 @@ var app = angular.module('builder', []).
         $scope.toggle = function(pane) {
           if(pane.selected) {
             pane.selected = false;
+            panes.selected = false;
           }
           else {
             angular.forEach(panes, function(pane) {
@@ -19,6 +20,7 @@ var app = angular.module('builder', []).
             });
       
             pane.selected = true;
+            panes.selected = true;  // controls overall nav active state
           }
         };
 
@@ -29,7 +31,7 @@ var app = angular.module('builder', []).
         };
       },
       template:
-        '<nav>' +
+        '<nav ng-class="{active:panes.selected}">' +
           '<div class="button ui" ng-repeat="pane in panes" ng-class="{active:pane.selected}">' +
             '<a href="" ng-click="toggle(pane)">{{pane.symbol}}</a>' +
           '</div>' +
