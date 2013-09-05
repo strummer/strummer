@@ -30,7 +30,7 @@ var app = angular.module('builder', []).
       },
       template:
         '<nav>' +
-          '<ul class="nav nav-tabs">' +
+          '<ul class="nav">' +
             '<li ng-repeat="pane in panes" ng-class="{active:pane.selected}">' +
               '<a href="" ng-click="toggle(pane)">{{pane.title}}</a>' +
             '</li>' +
@@ -46,8 +46,9 @@ var app = angular.module('builder', []).
       restrict: 'E',
       transclude: true,
       scope: { title: '@' },
-      link: function(scope, element, attrs, tabsCtrl) {
-        tabsCtrl.addPane(scope);
+      link: function(scope, element, attrs, menuCtrl) {
+        // We inherit the menu controller (menuCtrl) from ^menu (see 'require' above)
+        menuCtrl.addPane(scope);
       },
       template:
         '<div class="pane" ng-class="{active: selected}" ng-transclude>' +
