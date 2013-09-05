@@ -14,6 +14,11 @@ nav.active {
   background-color: lightgreen;
 }
 
+nav.submenu {
+  width: 90%;
+  /* float:left; */
+}
+
 .pane {
   display:none;
 }
