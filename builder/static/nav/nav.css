@@ -17,8 +17,8 @@ nav.active {
 }
 
 nav.submenu {
-  width: 90%;
   /* float:left; */
+  width: 90%;
 }
 
 /* Main Nav - Button styles */
@@ -44,13 +44,14 @@ nav.submenu {
 }
 
 .pane.active {
-  display: inline;
+  display: inline-block;
 }
+
+/* Submenu - Nav styles */
 nav nav.active {
   color: lightgreen;
 
 }
-
 
 /* Submenu - Button styles */
 .submenu .button.ui {
@@ -63,6 +64,10 @@ nav nav.active {
   background-color: darkgreen;
   color: white;
   clear: both;
+}
+
+.submenu .pane {
+  padding: 20px;
 }
 
 
