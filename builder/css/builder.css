@@ -10,8 +10,13 @@ nav {
   overflow:hidden;
 }
 
-nav.selected {
+.pane {
+  visibility: hidden;
+}
+
+.pane.active {
   background-color: lightgreen;
+  visibility: visible;
 }
 
 .button.ui {
