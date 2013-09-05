@@ -70,7 +70,14 @@ nav nav.active {
   padding: 20px;
 }
 
+/* Submenu - Form styles */
+.submenu h2 {
+  font-size: 24px;
+}
 
+.submenu input {
+  margin: 0 20px;
+}
 /* Main Content */
 .content {
   margin: 20% 30% 20% 30%;

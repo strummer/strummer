@@ -63,6 +63,7 @@ var app = angular.module('builder', []).
       scope: { object: '@', link: '@', type: '@' },
       controller: function($scope, $element, $log) {
         var structures = $scope.structures = {};
+
         $scope.log = $log;
         structures += $scope;
         $scope.log.log(structures);
@@ -71,6 +72,35 @@ var app = angular.module('builder', []).
         '<div class="structure {{object}}">{{object}} {{type}} {{link}}' +
           '<div class="structure" ng-repeat="structure in structures">' +
           '</div>' +
+        '</div>',
+      replace: true
+    };
+  }).
+  directive('settings', function() {
+    return {
+      restrict: 'E',
+      transclude: true,
+      scope: { domain: '@' },
+      controller: function($scope, $element, $log) {
+        var domain = $scope.domain = "";
+
+        $scope.log = $log;
+
+        // domain += $scope;
+        $scope.log.log(domain);
+      },
+      template:
+        '<div class="settings">' +
+          '<form title="settings">' +
+            '<h2>Configure Your Domain</h2>' +
+            '<label>Hostname: ' +
+            '</label>' +
+            '<input type="text" ng-model="domain" />' +
+            '<label>Error validation goes here' +
+            '</label>' +
+            '<br /><br />' +
+            '<input type="submit" />' +
+          '</form>' + 
         '</div>',
       replace: true
     };
