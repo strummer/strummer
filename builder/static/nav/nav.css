@@ -46,7 +46,10 @@ nav.submenu {
 .pane.active {
   display: inline;
 }
+nav nav.active {
+  color: lightgreen;
 
+}
 
 
 /* Submenu - Button styles */
@@ -57,6 +60,8 @@ nav.submenu {
 /* Submenu - Pane styles */
 .submenu .tab-content {
   position: relative;
+  background-color: darkgreen;
+  color: white;
   clear: both;
 }
 
