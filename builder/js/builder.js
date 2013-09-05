@@ -9,32 +9,31 @@ var app = angular.module('builder', []).
 
         $scope.log = $log;
         
-        $scope.select = function(pane) {
-
-          angular.forEach(panes, function(pane) {
+        $scope.toggle = function(pane) {
+          if(pane.selected) {
             pane.selected = false;
-          });
-          if(pane.selected === false) {
-            // Only select if not currently selected
-            pane.selected = true;  
           }
-          
-          $log.log(pane);  
-        }
+          else {
+            angular.forEach(panes, function(pane) {
+              pane.selected = false;
+            });
+      
+            pane.selected = true;
+          }
+        };
 
         this.addPane = function(pane) {
-          // Select first tab
+          // Select first tab by default
           // if (panes.length == 0) $scope.select(pane);
           panes.push(pane);
-        }
+        };
       },
       template:
         '<nav>' +
           '<ul class="nav nav-tabs">' +
             '<li ng-repeat="pane in panes" ng-class="{active:pane.selected}">' +
-              '<a href="" ng-click="select(pane)">{{pane.title}}</a>' +
+              '<a href="" ng-click="toggle(pane)">{{pane.title}}</a>' +
             '</li>' +
-            '<li><a href="" ng-click="deslect($log)">Deselect</a></li> ' +
           '</ul>' +
           '<div class="tab-content" ng-transclude></div>' +
         '</nav>',
