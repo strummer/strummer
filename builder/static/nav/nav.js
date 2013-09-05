@@ -83,11 +83,9 @@ var app = angular.module('builder', []).
       scope: { domain: '@' },
       controller: function($scope, $element, $log) {
         var domain = $scope.domain = "";
+        var placeholder = $scope.placeholder = "e.g. www.strummer.io";
 
         $scope.log = $log;
-
-        // domain += $scope;
-        $scope.log.log(domain);
       },
       template:
         '<div class="settings">' +
@@ -95,7 +93,7 @@ var app = angular.module('builder', []).
             '<h2>Configure Your Domain</h2>' +
             '<label>Hostname: ' +
             '</label>' +
-            '<input type="text" ng-model="domain" />' +
+            '<input type="text" ng-model="domain" placeholder="{{placeholder}}"/>' +
             '<label>Error validation goes here' +
             '</label>' +
             '<br /><br />' +
