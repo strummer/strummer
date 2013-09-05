@@ -1,13 +1,15 @@
-/* Base CSS styles for Builder prototype */
+/* Base CSS styles for Builder navigation
+     source: /static/nav/nav.js
+ */
 body {
   margin: 0;
 }
 
+/* Main Navigation */
 nav {
   position:absolute;
   top:0;
   width: 100%;
-  overflow:hidden;
 }
 
 nav.active {
@@ -19,14 +21,7 @@ nav.submenu {
   /* float:left; */
 }
 
-.pane {
-  display:none;
-}
-
-.pane.active {
-  display: inline;
-}
-
+/* Main Nav - Button styles */
 .button.ui {
   float:right;
   padding: 10px;
@@ -43,6 +38,30 @@ nav.submenu {
   text-decoration: underline;
 }
 
+/* Main Nav - Pane styles */
+.pane {
+  display:none;
+}
+
+.pane.active {
+  display: inline;
+}
+
+
+
+/* Submenu - Button styles */
+.submenu .button.ui {
+  float:left;
+}
+
+/* Submenu - Pane styles */
+.submenu .tab-content {
+  position: relative;
+  clear: both;
+}
+
+
+/* Main Content */
 .content {
   margin: 20% 30% 20% 30%;
 }
