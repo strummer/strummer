@@ -4,6 +4,7 @@ Angular devs suggest modules be [grouped by function](http://henriquat.re/modula
 
 Inside static, you'll find a folder for each angular module.
 
+
 ## Main Application Module
 
 The **`./builder`** directory houses the main application javascript which loads all subsequent modules via dependency injection.
@@ -31,3 +32,6 @@ For example:
   |_ nav_header.html
   |_ nav_subnav.html
 ````
+
+
+_Note: all external libraries are located in `./lib`_
