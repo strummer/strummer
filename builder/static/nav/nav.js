@@ -1,4 +1,3 @@
-var builder = angular.module('builder', ['nav']);
 
 var nav = angular.module('nav', []).
   directive('menu', function() {
@@ -126,14 +125,8 @@ var nav = angular.module('nav', []).
             '</label>' +
             '<br /><br />' +
             '<input type="submit" />' +
-          '</form>' + 
+          '</form>' +
         '</div>',
       replace: true
     };
   });
-
-
-  builder.run(function($rootScope, $log) {
-    $rootScope.$log = $log;
-  });
-  
