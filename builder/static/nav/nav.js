@@ -1,4 +1,6 @@
-var app = angular.module('builder', []).
+var builder = angular.module('builder', ['nav']);
+
+var nav = angular.module('nav', []).
   directive('menu', function() {
     return {
       restrict: 'E',
@@ -131,7 +133,7 @@ var app = angular.module('builder', []).
   });
 
 
-  app.run(function($rootScope, $log) {
+  builder.run(function($rootScope, $log) {
     $rootScope.$log = $log;
   });
   
