@@ -56,24 +56,50 @@ var app = angular.module('builder', []).
       replace: true
     };
   }).
-  directive('structure', function() {
+  controller('structureController', function($scope) {
+    $scope.structure = {
+      name: "Comments",
+      type: "list",
+      children: [{
+        name: "Author",
+        type: "link",
+        link: "authors",
+        children: []
+      }, {
+        name: "Content",
+        type: "text",
+        children: []
+      }, {
+        name: "Timestamp",
+        type: "time",
+        children: []
+      }]
+    };
+  }).
+  directive('structure', function($compile) {
     return {
       restrict: 'E',
-      transclude: true,
-      scope: { object: '@', link: '@', type: '@' },
-      controller: function($scope, $element, $log) {
-        var structures = $scope.structures = {};
+      scope: { structure: '=' },
 
-        $scope.log = $log;
-        structures += $scope;
-        $scope.log.log(structures);
+     compile: function(tElement, tAttr, $log) {
+        var contents = tElement.contents().remove();
+        var compiledContents;
+        return function(scope, iElement, iAttr) {
+          if(!compiledContents) {
+            compiledContents = $compile(contents);
+          }
+          compiledContents(scope, function(clone, scope) {
+            iElement.append(clone);
+          });
+        };
       },
       template:
-        '<div class="structure {{object}}">{{object}} {{type}} {{link}}' +
-          '<div class="structure" ng-repeat="structure in structures">' +
-          '</div>' +
-        '</div>',
-      replace: true
+        '<p>{{structure.name}}</p>' +
+        '<ul>' +
+          '<li ng-repeat="child in structure.children">' +
+            '<tree structure="child"></tree>' +
+          '</li>' +
+        '</ul>'
     };
   }).
   directive('settings', function() {
