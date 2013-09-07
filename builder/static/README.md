@@ -9,7 +9,7 @@ Inside static, you'll find a folder for each angular module.
 The **`./builder`** directory houses the main application javascript which loads all subsequent modules via dependency injection.
 
 
-## Structure of a Module folder
+## Structure of a Module
 
 Inside each module folder you will find all relevant files pertaining to the module.
 
