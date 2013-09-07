@@ -31,13 +31,7 @@ var nav = angular.module('nav', []).
           panes.push(pane);
         };
       },
-      template:
-        '<nav ng-class="{active:panes.selected}">' +
-          '<div class="button ui {{pane.title}}" ng-repeat="pane in panes" ng-class="{active:pane.selected}">' +
-            '<a href="" ng-click="toggle(pane)">{{pane.symbol}}</a>' +
-          '</div>' +
-          '<div class="tab-content" ng-transclude></div>' +
-        '</nav>',
+      templateUrl: '/static/nav/menu.html', // It seems crazy to define a static path like this. Need to look into relative options.
       replace: true
     };
   }).
@@ -51,9 +45,7 @@ var nav = angular.module('nav', []).
         // We inherit the menu controller (menuCtrl) from ^menu (see 'require' above)
         menuCtrl.addPane(scope);
       },
-      template:
-        '<div class="pane" ng-class="{active: selected}" ng-transclude>' +
-        '</div>',
+      templateUrl: 'static/nav/pane.html',
       replace: true
     };
   }).
@@ -94,13 +86,7 @@ var nav = angular.module('nav', []).
           });
         };
       },
-      template:
-        '<p>{{structure.name}}</p>' +
-        '<ul>' +
-          '<li ng-repeat="child in structure.children">' +
-            '<tree structure="child"></tree>' +
-          '</li>' +
-        '</ul>'
+      templateUrl: '/static/nav/structure.html'
     };
   }).
   directive('settings', function() {
@@ -114,19 +100,7 @@ var nav = angular.module('nav', []).
 
         $scope.log = $log;
       },
-      template:
-        '<div class="settings">' +
-          '<form title="settings">' +
-            '<h2>Configure Your Domain</h2>' +
-            '<label>Hostname: ' +
-            '</label>' +
-            '<input type="text" ng-model="domain" placeholder="{{placeholder}}"/>' +
-            '<label>Error validation goes here' +
-            '</label>' +
-            '<br /><br />' +
-            '<input type="submit" />' +
-          '</form>' +
-        '</div>',
+      templateUrl: '/static/nav/settings.html',
       replace: true
     };
   });
