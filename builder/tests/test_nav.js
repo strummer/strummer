@@ -7,7 +7,7 @@ describe('nav', function() {
   beforeEach(module('static/nav/menu.html', 'static/nav/pane.html'));
 
   describe('directive: menu', function() {
-    var scope, html, element, directive, compiled;
+    var scope, html, element, compiled;
     beforeEach(function() {
       html = '<menu>' +
                 '<pane title="CMS" symbol="#">' +
@@ -18,13 +18,17 @@ describe('nav', function() {
       inject(function($compile, $rootScope, $templateCache) {
         scope = $rootScope;
         element = angular.element(html);
-        compiled = $compile(element);
-        compiled(scope);
+        compiled = $compile(element)(scope);
         scope.$digest();
       });
     });
-    it('Should select a single pane if no panes are selected', function() {
+    it('Should start with no panes selected', function() {
+      var test = element.find('.active'); // We indicate an active pane by setting a class .active
+      var result = {};
 
+      expect(JSON.stringify(test)).toEqual(JSON.stringify(result));
+    });
+    it('Should select a single pane if no panes are selected', function() {
       expect('a').toEqual('a');
     });
     it('Should de-select the current pane if the current pane is selected', function() {
