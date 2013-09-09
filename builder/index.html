@@ -19,32 +19,32 @@ More info: https://github.com/strummer/strummer/tree/builder/builder
 
 </head>
 <body>
-  <menu>
-    <pane title="CMS" symbol="#">
-      Submenu stuff goes here
-    </pane>
-    <pane title="Builder" symbol="@">
-      <menu class="submenu">
-        <pane title="Structures" symbol="Structures">
-          <div ng-controller="structureController">
-            <structure structure="structure"></tree>
-          </div>
+    <menu>
+        <pane title="CMS" symbol="#">
+            Submenu stuff goes here
         </pane>
-        <pane title="Publish" symbol="Publish">
-          Publish sub-nav!
+        <pane title="Builder" symbol="@">
+            <menu class="submenu">
+                <pane title="Structures" symbol="Structures">
+                    <div ng-controller="structureController">
+                        <structure structure="structure"></tree>
+                    </div>
+                </pane>
+                <pane title="Publish" symbol="Publish">
+                    Publish sub-nav!
+                </pane>
+                <pane title="Settings" symbol="Settings">
+                    <settings></settings>
+                </pane>
+
+            </menu>
+
         </pane>
-        <pane title="Settings" symbol="Settings">
-          <settings></settings>
-        </pane>
+    </menu>
 
-      </menu>
-
-    </pane>
-  </menu>
-
-  <section class="content">
-    <IMG SRC="images/example-content.png">
-  </section>
+    <section class="content">
+        <IMG SRC="images/example-content.png">
+    </section>
 
 </body>
 </html>

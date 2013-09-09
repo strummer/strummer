@@ -1,6 +1,6 @@
 <nav ng-class="{active:panes.selected}">
-  <div class="button ui {{pane.title}}" ng-repeat="pane in panes" ng-class="{active:pane.selected}">
-    <a href="" ng-click="toggle(pane)">{{pane.symbol}}</a>
-  </div>
+    <div class="button ui {{pane.title}}" ng-repeat="pane in panes" ng-class="{active:pane.selected}">
+        <a href="" ng-click="toggle(pane)">{{pane.symbol}}</a>
+    </div>
  <div class="tab-content" ng-transclude></div>
 </nav>

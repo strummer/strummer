@@ -1,85 +1,85 @@
 /* Base CSS styles for Builder navigation
-     source: /static/nav/nav.js
+         source: /static/nav/nav.js
  */
 body {
-  margin: 0;
+    margin: 0;
 }
 
 /* Main Navigation */
 nav {
-  position:absolute;
-  top:0;
-  width: 100%;
+    position:absolute;
+    top:0;
+    width: 100%;
 }
 
 nav.active {
-  background-color: lightgreen;
+    background-color: lightgreen;
 }
 
 nav.submenu {
-  /* float:left; */
-  width: 90%;
+    /* float:left; */
+    width: 90%;
 }
 
 /* Main Nav - Button styles */
 .button.ui {
-  float:right;
-  padding: 10px;
+    float:right;
+    padding: 10px;
 }
 
 .button.ui a {
-  font-size: 20px;
-  color: green;
-  text-decoration: none;
+    font-size: 20px;
+    color: green;
+    text-decoration: none;
 }
 
 .button.ui.active a {
-  color: white;
-  text-decoration: underline;
+    color: white;
+    text-decoration: underline;
 }
 
 /* Main Nav - Pane styles */
 .pane {
-  display:none;
+    display:none;
 }
 
 .pane.active {
-  display: inline-block;
+    display: inline-block;
 }
 
 /* Submenu - Nav styles */
 nav nav.active {
-  color: lightgreen;
+    color: lightgreen;
 
 }
 
 /* Submenu - Button styles */
 .submenu .button.ui {
-  float:left;
+    float:left;
 }
 
 /* Submenu - Pane styles */
 .submenu .tab-content {
-  position: relative;
-  background-color: darkgreen;
-  color: white;
-  clear: both;
-  width: 111%;
+    position: relative;
+    background-color: darkgreen;
+    color: white;
+    clear: both;
+    width: 111%;
 }
 
 .submenu .pane {
-  padding: 20px;
+    padding: 20px;
 }
 
 /* Submenu - Form styles */
 .submenu h2 {
-  font-size: 24px;
+    font-size: 24px;
 }
 
 .submenu input {
-  margin: 0 20px;
+    margin: 0 20px;
 }
 /* Main Content */
 .content {
-  margin: 20% 30% 20% 30%;
+    margin: 20% 30% 20% 30%;
 }
