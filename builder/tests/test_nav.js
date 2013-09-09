@@ -15,19 +15,22 @@ describe('nav', function() {
                 '</pane>' +
               '</menu>';
 
-      inject(function($compile, $rootScope, $templateCache) {
+      inject(function($compile, $rootScope) {
         scope = $rootScope;
         element = angular.element(html);
         compiled = $compile(element)(scope);
         scope.$digest();
       });
     });
-    it('Should start with no panes selected', function() {
+    it('Should start with no panes selected', inject(function($controller, $rootScope) {
       var test = element.find('.active'); // We indicate an active pane by setting a class .active
       var result = {};
 
       expect(JSON.stringify(test)).toEqual(JSON.stringify(result));
-    });
+
+      ctrl = $controller(menuController, {$scope: scope, $element: null});
+      console.log(ctrl);
+    }));
     it('Should select a single pane if no panes are selected', function() {
       expect('a').toEqual('a');
     });
