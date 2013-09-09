@@ -15,6 +15,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // Libraries
+      'static/lib/jquery-1.10.2.min.js',  // Need jquery for improved angular.element.find to find classes, not just root elements: http://docs.angularjs.org/api/angular.element
       'static/lib/angular.js',  // If we don't specify angular.js first, it won't be loaded before our JS.
       'static/lib/angular-mocks.js',
 

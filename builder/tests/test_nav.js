@@ -14,8 +14,11 @@ describe('nav', function() {
         beforeEach(function() {
             html = '' +
             '<menu>' +
-                '<pane title="CMS" symbol="#">' +
-                    'Submenu stuff goes here' +
+                '<pane title="pane1" symbol="#">' +
+                    'pane1 contents goes here' +
+                '</pane>' +
+                '<pane title="pane2" symbol="@">' +
+                    'pane2 contents goes here' +
                 '</pane>' +
             '</menu>';
 
@@ -34,6 +37,7 @@ describe('nav', function() {
         }));
 
         it('Should add panes', inject(function($controller, $rootScope) {
+            // Test Contoller with stub data
             var pane1 = {}, pane2 = {};
 
             // There should be no panes when we start
@@ -50,13 +54,10 @@ describe('nav', function() {
         it('Should start with no panes selected', inject(function($controller, $rootScope) {
             // Test impact on DOM
             var test = element.find('.active'); // We indicate an active pane by setting a class .active
-            var result = {};  // There should be no active panes
 
-            console.log(element);
+            expect(test.length).toEqual(0);
 
-            expect(JSON.stringify(test)).toEqual(JSON.stringify(result));
-
-            // Test actual Contoller with stub data
+            // Test Contoller
             var pane1 = {}, pane2 = {};
 
             ctrl.addPane(pane1);
@@ -68,7 +69,12 @@ describe('nav', function() {
         }));
 
         it('Should select a single pane when clicked if no panes are selected', function() {
-            
+            // Test impact on DOM
+            // console.log(element);
+            buttons = element.find('.button');
+            // console.log(buttons);
+
+            // Test Controller
         });
         
         it('Should de-select the current pane when clicked if the current pane is selected', function() {
