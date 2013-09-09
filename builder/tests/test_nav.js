@@ -117,7 +117,31 @@ describe('nav', function() {
         });
 
         it('Should select the current pane when clicked and de-select the other pane if another pane is selected', function() {
+            // Test DOM
+            buttons = element.find('.button');
 
+            buttons.eq(0).find('a').click();
+            buttons.eq(1).find('a').click();
+
+            active = element.find('.active');
+            expect(active.length).toEqual(2);   // We should have two active (selected) objects: The button and the pane
+
+            pane = active[0];
+            expect(pane.className).toContain('pane2');
+
+            button = active[1];
+            expect(button.title).toEqual('pane2');
+
+            // Test Controller
+            var pane1 = {}, pane2 = {};
+
+            ctrl.addPane(pane1);
+            ctrl.addPane(pane2);
+
+            scope.toggle(pane1);
+            scope.toggle(pane2);
+            expect(pane1.selected).toBeFalsy();
+            expect(pane2.selected).toBeTruthy();
         });
 
     });
