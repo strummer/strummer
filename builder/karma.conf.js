@@ -14,11 +14,24 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      // Libraries
       'static/lib/angular.js',  // If we don't specify angular.js first, it won't be loaded before our JS.
       'static/lib/angular-mocks.js',
+
+      // Modules
       'static/**/*.js',
-      'tests/*.js'
+
+      // Tests
+      'tests/*.js',
+
+      // Templates
+      'static/**/*.html'
     ],
+
+    // generate js files from html templates
+    preprocessors: {
+      '**/*.html': ['ng-html2js']
+    },
 
 
     // list of files to exclude
