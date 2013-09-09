@@ -55,7 +55,7 @@ describe('nav', function() {
             // Test impact on DOM
             var test = element.find('.active'); // We indicate an active pane by setting a class .active
 
-            expect(test.length).toEqual(0);
+            expect(test.length).toEqual(0); // There should be no active (selected) panes
 
             // Test Contoller
             var pane1 = {}, pane2 = {};
@@ -70,11 +70,29 @@ describe('nav', function() {
 
         it('Should select a single pane when clicked if no panes are selected', function() {
             // Test impact on DOM
-            // console.log(element);
             buttons = element.find('.button');
-            // console.log(buttons);
+            expect(buttons.length).toEqual(2);
+
+            buttons.eq(0).find('a').click();
+
+            active = element.find('.active');
+            expect(active.length).toEqual(2);   // We should have two active (selected) objects: The button and the pane
+            
+            pane = active[0];
+            expect(pane.className).toContain('pane1');
+
+            button = active[1];
+            expect(button.title).toEqual('pane1');
 
             // Test Controller
+            var pane1 = {}, pane2 = {};
+
+            ctrl.addPane(pane1);
+            ctrl.addPane(pane2);
+
+            scope.toggle(pane1);
+            expect(pane1.selected).toBeTruthy();
+            expect(pane2.selected).toBeFalsy();
         });
         
         it('Should de-select the current pane when clicked if the current pane is selected', function() {
