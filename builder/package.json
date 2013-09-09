@@ -18,8 +18,9 @@
       "email": "jdennis@gmail.com"
     }
   ],
+  "dependencies": {
+  },
   "devDependencies": {
-    "mocha": "~1.12.1",
     "karma-chrome-launcher": "~0.1.0",
     "karma-firefox-launcher": "~0.1.0",
     "karma-script-launcher": "~0.1.0",
@@ -28,8 +29,7 @@
     "karma-requirejs": "~0.1.0",
     "karma-coffee-preprocessor": "~0.1.0",
     "karma-phantomjs-launcher": "~0.1.0",
-    "karma": "~0.10.2",
-    "karma-mocha": "~0.1.0"
+    "karma": "~0.10.2"
   },
   "main": "index"
 }

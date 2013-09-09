@@ -9,22 +9,20 @@ module.exports = function(config) {
 
 
     // frameworks to use
-    frameworks: ['mocha'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'static/*.js',
-      './*.js',
-      '*.js',
-      'tests/*.js',
-      'static/**/*.js'
+      'static/lib/angular.js',  // If we don't specify angular.js first, it won't be loaded before our JS.
+      'static/lib/angular-mocks.js',
+      'static/**/*.js',
+      'tests/*.js'
     ],
 
 
     // list of files to exclude
     exclude: [
-      
     ],
 
 

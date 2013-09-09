@@ -31,7 +31,7 @@ var nav = angular.module('nav', []).
           panes.push(pane);
         };
       },
-      templateUrl: '/static/nav/menu.html', // It seems crazy to define a static path like this. Need to look into relative options.
+      templateUrl: 'static/nav/menu.html', // It seems crazy to define a static path like this. Need to look into relative options.
       replace: true
     };
   }).
