@@ -7,7 +7,10 @@ describe('nav', function() {
   beforeEach(module('static/nav/menu.html', 'static/nav/pane.html'));
 
   describe('directive: menu', function() {
-    var scope, html, element, compiled;
+    var scope;
+
+    // Setup DOM
+    var html, element, compiled;
     beforeEach(function() {
       html = '<menu>' +
                 '<pane title="CMS" symbol="#">' +
@@ -22,14 +25,24 @@ describe('nav', function() {
         scope.$digest();
       });
     });
+
+    // Setup Controller
+    var ctrl;
+    beforeEach(inject(function($controller) {
+      ctrl = $controller(menuController, {$scope: scope, $element: null});
+    }));
+    
     it('Should start with no panes selected', inject(function($controller, $rootScope) {
+      // Test impact on DOM
       var test = element.find('.active'); // We indicate an active pane by setting a class .active
       var result = {};
 
       expect(JSON.stringify(test)).toEqual(JSON.stringify(result));
 
-      ctrl = $controller(menuController, {$scope: scope, $element: null});
-      console.log(ctrl);
+      // Test actual Contoller
+      
+      expect(scope.panes).toEqual([]);
+
     }));
     it('Should select a single pane if no panes are selected', function() {
       expect('a').toEqual('a');
