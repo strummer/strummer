@@ -58,10 +58,12 @@ describe('nav', function() {
       // Test actual Contoller with stub data
       var pane1 = {}, pane2 = {};
 
-      
+      ctrl.addPane(pane1);
+      ctrl.addPane(pane2);
 
-      // 
-
+      angular.forEach(scope.panes, function(pane) {
+        expect(pane.selected).toEqual(null);
+      });
     }));
     it('Should select a single pane when clicked if no panes are selected', function() {
       
