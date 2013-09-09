@@ -19,11 +19,8 @@ module.exports = function(config) {
       'static/lib/angular.js',  // If we don't specify angular.js first, it won't be loaded before our JS.
       'static/lib/angular-mocks.js',
 
-      // Modules
+      // Modules and Tests
       'static/**/*.js',
-
-      // Tests
-      'tests/*.js',
 
       // Templates
       'static/**/*.html'
