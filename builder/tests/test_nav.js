@@ -69,7 +69,7 @@ describe('nav', function() {
         }));
 
         it('Should select a single pane when clicked if no panes are selected', function() {
-            // Test impact on DOM
+            // Test DOM
             buttons = element.find('.button');
             expect(buttons.length).toEqual(2);
 
@@ -96,7 +96,24 @@ describe('nav', function() {
         });
         
         it('Should de-select the current pane when clicked if the current pane is selected', function() {
+            // Test DOM
+            buttons = element.find('.button');
 
+            buttons.eq(0).find('a').click();
+            buttons.eq(0).find('a').click();
+
+            active = element.find('.active');
+            expect(active.length).toEqual(0);   // We should not have any active (selected) objects
+
+            // Test Controller
+            var pane1 = {}, pane2 = {};
+
+            ctrl.addPane(pane1);
+            ctrl.addPane(pane2);
+
+            scope.toggle(pane1);
+            scope.toggle(pane1);
+            expect(pane1.selected).toBeFalsy();
         });
 
         it('Should select the current pane when clicked and de-select the other pane if another pane is selected', function() {
