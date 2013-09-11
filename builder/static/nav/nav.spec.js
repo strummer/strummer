@@ -1,4 +1,4 @@
-describe('nav', function() {
+describe("nav", function() {
 
     beforeEach(module('nav'));
 
@@ -6,7 +6,7 @@ describe('nav', function() {
     // Reference: https://github.com/vojtajina/ng-directive-testing
     beforeEach(module('static/nav/menu.html', 'static/nav/pane.html', 'static/nav/settings.html'));
 
-    describe('directive: menu', function() {
+    describe("directive: menu", function() {
         var scope;
 
         // Setup DOM
@@ -36,7 +36,7 @@ describe('nav', function() {
             ctrl = $controller(menuController, {$scope: scope, $element: null});
         }));
 
-        it('Should add panes', inject(function($controller, $rootScope) {
+        it("Should add panes", inject(function($controller, $rootScope) {
             // Test Contoller with stub data
             var pane1 = {}, pane2 = {};
 
@@ -51,7 +51,7 @@ describe('nav', function() {
             expect(scope.panes.length).toEqual(2);
         }));
         
-        it('Should start with no panes selected', inject(function($controller, $rootScope) {
+        it("Should start with no panes selected", inject(function($controller, $rootScope) {
             // Test impact on DOM
             var test = element.find('.active'); // We indicate an active pane by setting a class .active
 
@@ -68,7 +68,7 @@ describe('nav', function() {
             });
         }));
 
-        it('Should select a single pane when clicked if no panes are selected', function() {
+        it("Should select a single pane when clicked if no panes are selected", function() {
             // Test DOM
             buttons = element.find('.button');
             expect(buttons.length).toEqual(2);
@@ -95,7 +95,7 @@ describe('nav', function() {
             expect(pane2.selected).toBeFalsy();
         });
         
-        it('Should de-select the current pane when clicked if the current pane is selected', function() {
+        it("Should de-select the current pane when clicked if the current pane is selected", function() {
             // Test DOM
             buttons = element.find('.button');
 
@@ -116,7 +116,7 @@ describe('nav', function() {
             expect(pane1.selected).toBeFalsy();
         });
 
-        it('Should select the current pane when clicked and de-select the other pane if another pane is selected', function() {
+        it("Should select the current pane when clicked and de-select the other pane if another pane is selected", function() {
             // Test DOM
             buttons = element.find('.button');
 
@@ -146,16 +146,15 @@ describe('nav', function() {
 
     });
 
-    describe('directive: settings', function() {
+    describe("directive: settings", function() {
         var scope;
 
         // Setup DOM
         var html, element, compiled;
         beforeEach(function() {
             html = '' +
-            '<pane title="Settings" symbol="Settings">' +
-                '<settings></settings>' +
-            '</pane>';
+            '<settings></settings>' +
+            
             inject(function($compile, $rootScope) {
                 scope = $rootScope;
                 element = angular.element(html);
@@ -170,23 +169,22 @@ describe('nav', function() {
             ctrl = $controller(settingsController, {$scope: scope, $element: null});
         }));
 
-        it('Should retrieve the domain from the datastore', inject(function($controller, $rootScope) {
+        it("Should retrieve the domain from the datastore", inject(function($controller, $rootScope) {
         }));
         
-        it('Should display an error if the domain cannot be retrieved from the datastore', inject(function($controller, $rootScope) {
+        it("Should display an error if the domain cannot be retrieved from the datastore", inject(function($controller, $rootScope) {
         }));
 
-
-        it('Should display an empty domain if no domain exists', inject(function($controller, $rootScope) {
+        it("Should display an empty domain if no domain exists", inject(function($controller, $rootScope) {
         }));
 
-        it('Should display the user\'s domain if no domain exists', inject(function($controller, $rootScope) {
+        it("Should display the user\'s domain if no domain exists", inject(function($controller, $rootScope) {
         }));
 
-        it('Should save the user\'s domain when the user clicks \'Save\'', inject(function($controller, $rootScope) {
+        it("Should save the user\'s domain when the user clicks \'Save\'", inject(function($controller, $rootScope) {
         }));
 
-        it('Should display an error if the domain cannot be saved', inject(function($controller, $rootScope) {
+        it("Should display an error if the domain cannot be saved", inject(function($controller, $rootScope) {
         }));
     });
 });
