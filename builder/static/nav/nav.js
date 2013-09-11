@@ -72,7 +72,7 @@ controller('structureController', function($scope) {
             children: []
         }]
     };
-})
+});
 
 nav.directive('structure', function($compile) {
     return {
@@ -95,18 +95,22 @@ nav.directive('structure', function($compile) {
     };
 });
 
+settingsController = function($scope, $element, $log) {
+    var domain = $scope.domain = "";
+    var placeholder = $scope.placeholder = "e.g. www.strummer.io";
+
+    $scope.log = $log;
+};
+
 nav.directive('settings', function() {
     return {
         restrict: 'E',
         transclude: true,
         scope: { domain: '@' },
-        controller: function($scope, $element, $log) {
-            var domain = $scope.domain = "";
-            var placeholder = $scope.placeholder = "e.g. www.strummer.io";
-
-            $scope.log = $log;
-        },
+        controller: settingsController,
         templateUrl: '/static/nav/settings.html',
         replace: true
     };
 });
+
+
