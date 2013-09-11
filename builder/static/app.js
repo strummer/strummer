@@ -1,6 +1,6 @@
 /* builder.js - Contains main app loader and injects dependencies */
 
-var builder = angular.module('builder', ['nav']);
+var builder = angular.module('builder', ['nav', 'firebase']);
 
 /* Angular uses $log to wrap console.log
     We append it to the global scope (namespace) to ensure we can log from anywhere in the app. */

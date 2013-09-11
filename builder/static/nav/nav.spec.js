@@ -163,13 +163,16 @@ describe("nav", function() {
             });
         });
 
+        
         // Setup Controller
         var ctrl;
         beforeEach(inject(function($controller) {
-            ctrl = $controller(settingsController, {$scope: scope, $element: null});
+            ctrl = $controller('settingsController', {$scope: scope, $element: null});
         }));
 
         it("Should retrieve the domain from the datastore", inject(function($controller, $rootScope) {
+            // Test Controller
+
         }));
         
         it("Should display an error if the domain cannot be retrieved from the datastore", inject(function($controller, $rootScope) {
@@ -186,5 +189,6 @@ describe("nav", function() {
 
         it("Should display an error if the domain cannot be saved", inject(function($controller, $rootScope) {
         }));
+
     });
 });

@@ -95,10 +95,10 @@ nav.directive('structure', function($compile) {
     };
 });
 
-settingsController = function($scope, $element, $log) {
+settingsController = function($scope, $element, $log, angularFire) {
     var domain = $scope.domain = "";
     var placeholder = $scope.placeholder = "e.g. www.strummer.io";
-
+    console.log(angularFire);
     $scope.log = $log;
 };
 
