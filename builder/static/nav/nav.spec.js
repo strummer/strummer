@@ -178,10 +178,10 @@ describe("nav", function() {
         it("Should display an empty domain if no domain exists", inject(function($controller, $rootScope) {
         }));
 
-        it("Should display the user\'s domain if no domain exists", inject(function($controller, $rootScope) {
+        it("Should display the user's domain if a domain exists", inject(function($controller, $rootScope) {
         }));
 
-        it("Should save the user\'s domain when the user clicks \'Save\'", inject(function($controller, $rootScope) {
+        it("Should save the user's domain when the user clicks 'Save'", inject(function($controller, $rootScope) {
         }));
 
         it("Should display an error if the domain cannot be saved", inject(function($controller, $rootScope) {
