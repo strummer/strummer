@@ -98,7 +98,6 @@ nav.directive('structure', function($compile) {
 settingsController = function($scope, $element, $log, angularFire) {
     var domain = $scope.domain = "";
     var placeholder = $scope.placeholder = "e.g. www.strummer.io";
-    console.log(angularFire);
     $scope.log = $log;
 };
 
@@ -107,7 +106,7 @@ nav.directive('settings', function() {
         restrict: 'E',
         transclude: true,
         scope: { domain: '@' },
-        controller: settingsController,
+        controller: 'settingsController',
         templateUrl: 'static/nav/settings.html',
         replace: true
     };

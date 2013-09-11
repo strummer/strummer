@@ -1,6 +1,6 @@
 describe("nav", function() {
 
-    beforeEach(module('nav'));
+    beforeEach(module('nav', 'firebase'));
 
     // We have to load the templates in advance, otherwise the browser tries to fetch them dynamically which causes tests to fail.
     // Reference: https://github.com/vojtajina/ng-directive-testing
@@ -170,8 +170,10 @@ describe("nav", function() {
             ctrl = $controller('settingsController', {$scope: scope, $element: null});
         }));
 
-        it("Should retrieve the domain from the datastore", inject(function($controller, $rootScope) {
+        it("Should retrieve the domain from the datastore", inject(function($controller, $rootScope, angularFire) {
             // Test Controller
+            console.log(angularFire);
+            expect(true).toBeTruthy();
 
         }));
         
