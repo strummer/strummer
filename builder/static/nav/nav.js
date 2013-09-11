@@ -91,7 +91,7 @@ nav.directive('structure', function($compile) {
                 });
             };
         },
-        templateUrl: '/static/nav/structure.html'
+        templateUrl: 'static/nav/structure.html'
     };
 });
 
@@ -108,7 +108,7 @@ nav.directive('settings', function() {
         transclude: true,
         scope: { domain: '@' },
         controller: settingsController,
-        templateUrl: '/static/nav/settings.html',
+        templateUrl: 'static/nav/settings.html',
         replace: true
     };
 });
