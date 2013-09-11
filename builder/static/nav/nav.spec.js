@@ -4,7 +4,7 @@ describe('nav', function() {
 
     // We have to load the templates in advance, otherwise the browser tries to fetch them dynamically which causes tests to fail.
     // Reference: https://github.com/vojtajina/ng-directive-testing
-    beforeEach(module('static/nav/menu.html', 'static/nav/pane.html'));
+    beforeEach(module('static/nav/menu.html', 'static/nav/pane.html', 'static/nav/settings.html'));
 
     describe('directive: menu', function() {
         var scope;
@@ -144,5 +144,49 @@ describe('nav', function() {
             expect(pane2.selected).toBeTruthy();
         });
 
+    });
+
+    describe('directive: settings', function() {
+        var scope;
+
+        // Setup DOM
+        var html, element, compiled;
+        beforeEach(function() {
+            html = '' +
+            '<pane title="Settings" symbol="Settings">' +
+                '<settings></settings>' +
+            '</pane>';
+            inject(function($compile, $rootScope) {
+                scope = $rootScope;
+                element = angular.element(html);
+                compiled = $compile(element)(scope);
+                scope.$digest();
+            });
+        });
+
+        // Setup Controller
+        var ctrl;
+        beforeEach(inject(function($controller) {
+            ctrl = $controller(settingsController, {$scope: scope, $element: null});
+        }));
+
+        it('Should retrieve the domain from the datastore', inject(function($controller, $rootScope) {
+        }));
+        
+        it('Should display an error if the domain cannot be retrieved from the datastore', inject(function($controller, $rootScope) {
+        }));
+
+
+        it('Should display an empty domain if no domain exists', inject(function($controller, $rootScope) {
+        }));
+
+        it('Should display the user\'s domain if no domain exists', inject(function($controller, $rootScope) {
+        }));
+
+        it('Should save the user\'s domain when the user clicks \'Save\'', inject(function($controller, $rootScope) {
+        }));
+
+        it('Should display an error if the domain cannot be saved', inject(function($controller, $rootScope) {
+        }));
     });
 });
