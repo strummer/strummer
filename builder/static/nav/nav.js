@@ -96,7 +96,10 @@ nav.directive('structure', function($compile) {
 });
 
 settingsController = function($scope, $element, $log, angularFire) {
-    var domain = $scope.domain = "";
+    var ref = new Firebase('https://bdickason.firebaseio.com');
+
+    var domain = $scope.domain = "test";
+    // angularFire(ref, $scope, 'domain');
     var placeholder = $scope.placeholder = "e.g. www.strummer.io";
     $scope.log = $log;
 };
@@ -104,6 +107,7 @@ settingsController = function($scope, $element, $log, angularFire) {
 nav.directive('settings', function() {
     return {
         restrict: 'E',
+        require: 'ngModel',
         transclude: true,
         scope: { domain: '@' },
         controller: 'settingsController',
