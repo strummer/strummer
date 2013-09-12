@@ -96,9 +96,9 @@ nav.directive('structure', function($compile) {
 });
 
 settingsController = function($scope, $element, $log, angularFire) {
+    var domain = $scope.domain = "";
     var ref = new Firebase('https://bdickason.firebaseio.com/settings/domain');
 
-    var domain = $scope.domain = "test";
     angularFire(ref, $scope, 'domain');
 
     var placeholder = $scope.placeholder = "e.g. www.strummer.io";
