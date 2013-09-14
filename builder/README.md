@@ -11,6 +11,24 @@ Builder is a web-based tool that gives you instant feedback on your app as you b
 To access Builder, hit '~' (like the Quake console!) or click on the icon that appears for signed-in users with the 'Admin' flag set.
 
 
+# Installation
+
+To run the Builder prototype, you need to setup NodeJS (static server) and Karma (test runner).
+
+### Install NodeJS
+
+Follow the instructions at: http://nodejs.org/
+
+### Install depdendencies
+
+1. Open the Builder directory in your terminal: `cd ./builder`
+2. Run npm install to install basic dependencies: `npm install`
+
+### Install testing dependencies (optional)
+
+1. Open your terminal
+2. Install Karma globally: `sudo npm install -g karma`
+
 
 # Features
 
