@@ -19,6 +19,7 @@
         }
     ],
     "dependencies": {
+        "simple-server": "1.0.0"
     },
     "devDependencies": {
         "karma-chrome-launcher": "~0.1.0",
