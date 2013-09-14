@@ -1,6 +1,6 @@
 describe("nav", function() {
 
-    beforeEach(module('nav', 'firebase'));
+    beforeEach(module('nav', 'firebase', 'settings'));
 
     // We have to load the templates in advance, otherwise the browser tries to fetch them dynamically which causes tests to fail.
     // Reference: https://github.com/vojtajina/ng-directive-testing
@@ -166,13 +166,24 @@ describe("nav", function() {
         
         // Setup Controller
         var ctrl;
+
+        /*
+        beforeEach(module(function($provide) {
+            $provide.value('Firebase', firebaseStub());
+            $provide.value('angularFireAuth', angularAuthStub());
+        }));
+*/
+
         beforeEach(inject(function($controller) {
             ctrl = $controller('settingsController', {$scope: scope, $element: null});
         }));
 
+        
         it("Should retrieve the domain from the datastore", inject(function($controller, $rootScope, angularFire) {
-            // Test Controller
-            console.log(angularFire);
+
+            // Stub fake response from firebase
+            // Verify that 'domain' has changed
+            console.log(scope.domain);
             expect(true).toBeTruthy();
 
         }));
@@ -181,9 +192,14 @@ describe("nav", function() {
         }));
 
         it("Should display an empty domain if no domain exists", inject(function($controller, $rootScope) {
+            // Stub fake response from angularFire server with empty domain name
+            // Mock angularFire module so request goes to our server  
+            
+            expect(scope.domain).toEqual('');
         }));
 
         it("Should display the user's domain if a domain exists", inject(function($controller, $rootScope) {
+
         }));
 
         it("Should save the user's domain when the user clicks 'Save'", inject(function($controller, $rootScope) {
