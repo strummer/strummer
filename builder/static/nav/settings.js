@@ -12,7 +12,7 @@ settingsController = function($scope, $element, $log, angularFire) {
     $scope.log = $log;
 };
 
-nav.directive('settings', function() {
+settings.directive('settings', function() {
     return {
         restrict: 'E',
         require: 'ngModel',
