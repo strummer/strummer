@@ -18,8 +18,6 @@ module.exports = function(config) {
       'static/lib/jquery-1.10.2.min.js',  // Need jquery for improved angular.element.find to find classes, not just root elements: http://docs.angularjs.org/api/angular.element
       'static/lib/angular.js',  // If we don't specify angular.js first, it won't be loaded before our JS.
       'static/lib/angular-mocks.js',
-      'static/lib/firebase.js',
-      'static/lib/angularfire.js',
 
       // Modules and Tests
       'static/**/*.js',

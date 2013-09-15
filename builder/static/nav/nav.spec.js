@@ -1,6 +1,6 @@
 describe("nav", function() {
 
-    beforeEach(module('nav', 'firebase'));
+    beforeEach(module('nav'));
 
     // We have to load the templates in advance, otherwise the browser tries to fetch them dynamically which causes tests to fail.
     // Reference: https://github.com/vojtajina/ng-directive-testing
