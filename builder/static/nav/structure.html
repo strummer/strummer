@@ -1,0 +1,6 @@
+<p>{{structure.name}}</p>
+<ul>
+    <li ng-repeat="child in structure.children">
+        <tree structure="child"></tree>
+    </li>
+</ul>
