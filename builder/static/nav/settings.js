@@ -6,6 +6,7 @@ settingsController = function($scope, $element, $log, domainFactory) {
     var domain = $scope.domain = domainFactory.get();
 
     var placeholder = $scope.placeholder = "e.g. www.strummer.io";
+
     $scope.log = $log;
 };
 

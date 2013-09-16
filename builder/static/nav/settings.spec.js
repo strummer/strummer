@@ -30,9 +30,22 @@ describe("directive: settings", function() {
         ctrl = $controller('settingsController', {$scope: scope, $element: null});
     }));
 
-    
-    it("Should retrieve the domain from the datastore", inject(function($controller, $rootScope) {
+    it("Should keep track of a domain on the current scope", inject(function($controller, $rootScope, domainFactory) {
         expect(scope.domain).toBeDefined();
+    }));
+    
+    it("Should successfully initialize the datastore", inject(function($controller, $rootScope, domainFactory) {
+        expect(domainFactory).toBeDefined();
+    }));
+
+    it("Should synchronize the with the datastore", inject(function($controller, $rootScope, domainFactory) {
+        /* expect(scope.domain).toEqual(domainFactory.get());
+        console.log(scope.domainFactory);
+
+        var expectedDomain = 'strummer.io';
+        domainFactory.set(expectedDomain);
+        console.log("changed it");
+        expect(scope.domain).toEqual(expectedDomain); */
     }));
     
     it("Should set the domain in the datastore", inject(function($controller, $rootScope) {
