@@ -3,9 +3,14 @@
 var settings = angular.module('settings', []);
 
 settingsController = function($scope, $element, $log, domainFactory) {
-    var domain = $scope.domain = domainFactory.get();
+    $scope.domain = domainFactory.get();
 
-    var placeholder = $scope.placeholder = "e.g. www.strummer.io";
+    $scope.placeholder = "e.g. www.strummer.io";
+
+    $scope.saveDomain = function() {
+        console.log("called:" + $scope.domain);
+        $scope.domain = domainFactory.set($scope.domain);
+    };
 
     $scope.log = $log;
 };
@@ -34,6 +39,7 @@ settings.factory("domainFactory", function() {
         },
         set: function(newValue) {
             domain = newValue;
+            return(domain);
         }
     };
 });

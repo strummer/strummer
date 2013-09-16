@@ -12,7 +12,7 @@ describe("directive: settings", function() {
     var html, element, compiled;
     beforeEach(function() {
         html = '' +
-        '<settings></settings>' +
+        '<settings></settings>';
         
         inject(function($compile, $rootScope) {
             scope = $rootScope;
@@ -22,7 +22,6 @@ describe("directive: settings", function() {
         });
     });
 
-    
     // Setup Controller
     var ctrl;
 
@@ -31,6 +30,7 @@ describe("directive: settings", function() {
     }));
 
     it("Should keep track of a domain on the current scope", inject(function($controller, $rootScope, domainFactory) {
+        // Test Controller
         expect(scope.domain).toBeDefined();
     }));
     
@@ -38,26 +38,32 @@ describe("directive: settings", function() {
         expect(domainFactory).toBeDefined();
     }));
 
-    it("Should synchronize the with the datastore", inject(function($controller, $rootScope, domainFactory) {
-        /* expect(scope.domain).toEqual(domainFactory.get());
-        console.log(scope.domainFactory);
+    it("Should retrieve the domain from the datastore", inject(function($controller, $rootScope, domainFactory) {
+        // Test DOM
+        textField = element.find('input').eq(0);
 
+        expect(textField.val()).toEqual('');
+
+        // Test Controller
+        expect(scope.domain).toEqual(domainFactory.get());
+    }));
+
+
+    it("Should set the domain when the user clicks 'Save'", inject(function($controller, $rootScope, domainFactory) {
         var expectedDomain = 'strummer.io';
-        domainFactory.set(expectedDomain);
-        console.log("changed it");
+
+        // Test DOM
+        /*textField = element.find('input').eq(0);
+        submitButton = element.find('a').eq(0);
+
+        textField.val(expectedDomain);
+        console.log(textField.val());
+        submitButton.click();
+
+        expect(textField.val()).toEqual(expectedDomain);
+
+        // Test Controller
         expect(scope.domain).toEqual(expectedDomain); */
-    }));
-    
-    it("Should set the domain in the datastore", inject(function($controller, $rootScope) {
-        expect(scope.domain).toEqual('');
-    }));
-
-    it("Should display the user's domain if a domain exists", inject(function($controller, $rootScope) {
-
-    }));
-
-    it("Should save the user's domain when the user clicks 'Save'", inject(function($controller, $rootScope) {
-
     }));
 
     it("Should display an error if the domain cannot be saved", inject(function($controller, $rootScope) {
