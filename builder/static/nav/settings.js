@@ -8,7 +8,6 @@ settingsController = function($scope, $element, $log, domainFactory) {
     $scope.placeholder = "e.g. www.strummer.io";
 
     $scope.saveDomain = function() {
-        console.log("called:" + $scope.domain);
         $scope.domain = domainFactory.set($scope.domain);
     };
 

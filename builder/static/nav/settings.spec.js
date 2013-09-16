@@ -51,19 +51,13 @@ describe("directive: settings", function() {
 
     it("Should set the domain when the user clicks 'Save'", inject(function($controller, $rootScope, domainFactory) {
         var expectedDomain = 'strummer.io';
+        scope.domain = expectedDomain;
 
-        // Test DOM
-        /*textField = element.find('input').eq(0);
-        submitButton = element.find('a').eq(0);
-
-        textField.val(expectedDomain);
-        console.log(textField.val());
-        submitButton.click();
-
-        expect(textField.val()).toEqual(expectedDomain);
+        scope.saveDomain();
 
         // Test Controller
-        expect(scope.domain).toEqual(expectedDomain); */
+        expect(scope.domain).toEqual(expectedDomain);
+        expect(domainFactory.get()).toEqual(expectedDomain);
     }));
 
     it("Should display an error if the domain cannot be saved", inject(function($controller, $rootScope) {
