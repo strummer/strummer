@@ -1,0 +1,36 @@
+{
+    "name": "builder",
+    "version": "0.0.1",
+    "description": "Builder is a web-based tool that gives you instant feedback on your app as you build it. Think of it like your on-site helper to make sure you aren't breaking everything.",
+    "homepage": "https://github.com/strummer/strummer/builder/",
+    "keywords": [
+        "strummer",
+        "builder"
+    ],
+    "author": "Brad Dickason <dickason@gmail.com>",
+    "contributors": [
+        {
+            "name": "Brad Dickason",
+            "email": "dickason@gmail.com"
+        },
+        {
+            "name": "James Dennis",
+            "email": "jdennis@gmail.com"
+        }
+    ],
+    "dependencies": {
+        "simple-server": "1.0.0"
+    },
+    "devDependencies": {
+        "karma-chrome-launcher": "~0.1.0",
+        "karma-firefox-launcher": "~0.1.0",
+        "karma-script-launcher": "~0.1.0",
+        "karma-ng-html2js-preprocessor": "~0.1.0",
+        "karma-jasmine": "~0.1.3",
+        "karma-requirejs": "~0.1.0",
+        "karma-coffee-preprocessor": "~0.1.0",
+        "karma-phantomjs-launcher": "~0.1.0",
+        "karma": "~0.10.2"
+    },
+    "main": "index"
+}
