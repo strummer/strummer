@@ -43,6 +43,10 @@ Builder is a web-based tool that gives you instant feedback on your app as you b
 
 [Builder Documentation](https://github.com/strummer/strummer/blob/builder/builder/README.md)
 
+This is what your data looks like based on your current changes to your HTML. Browse through the data structures you've created and discover the variables and information you have access to on each page.
+
+![Builder - Settings](builder/wireframes/builder-structures.png?raw=true)
+
 ## CMS
 
 Strummer's CMS is auto-generated from your HTML and allows you to manage and update your content and data.
