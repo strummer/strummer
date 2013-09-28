@@ -35,10 +35,11 @@ structure.factory("structureFactory", function() {
             link: "authors",
             children: []
         }, {
-            name: "Content",
-            type: "text",
+            name: "Posts",
+            type: "list",
             children: [{
-                name: "test",
+                name: "Contents",
+                type: "text",
                 children: []
             }]
         }, {
