@@ -16,7 +16,8 @@ More info: https://github.com/strummer/strummer/tree/builder/builder
 <!-- Project-specific JS -->
 <script src="static/app.js" ></script>
 <script src="static/nav/nav.js" ></script>
-<script src="static/nav/settings.js"></script>
+<script src="static/nav/settings/settings.js"></script>
+<script src="static/nav/structure/structure.js"></script>
 
 </head>
 <body>
@@ -28,7 +29,7 @@ More info: https://github.com/strummer/strummer/tree/builder/builder
             <menu class="submenu">
                 <pane title="Structures" symbol="Structures">
                     <div ng-controller="structureController">
-                        <structure structure="structure"></tree>
+                        <structure structure="structure"></structure>
                     </div>
                 </pane>
                 <pane title="Publish" symbol="Publish">

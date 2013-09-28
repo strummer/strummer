@@ -1,5 +1,6 @@
+/* nav - creates navigation and menu heirarchy */
 
-var nav = angular.module('nav', ['settings']);
+var nav = angular.module('nav', ['settings', 'structure']);
 
 menuController = function($scope, $element, $log) {
     var panes = $scope.panes = [];
@@ -52,49 +53,4 @@ nav.directive('pane', function() {
         templateUrl: 'static/nav/pane.html',
         replace: true
     };
-}).
-controller('structureController', function($scope) {
-    $scope.structure = {
-        name: "Comments",
-        type: "list",
-        children: [{
-            name: "Author",
-            type: "link",
-            link: "authors",
-            children: []
-        }, {
-            name: "Content",
-            type: "text",
-            children: []
-        }, {
-            name: "Timestamp",
-            type: "time",
-            children: []
-        }]
-    };
 });
-
-nav.directive('structure', function($compile) {
-    return {
-        restrict: 'E',
-        scope: { structure: '=' },
-
-     compile: function(tElement, tAttr, $log) {
-            var contents = tElement.contents().remove();
-            var compiledContents;
-            return function(scope, iElement, iAttr) {
-                if(!compiledContents) {
-                    compiledContents = $compile(contents);
-                }
-                compiledContents(scope, function(clone, scope) {
-                    iElement.append(clone);
-                });
-            };
-        },
-        templateUrl: 'static/nav/structure.html'
-    };
-});
-
-
-
-

@@ -1,3 +1,5 @@
+/* Tests for nav.js */
+
 describe("nav", function() {
 
     beforeEach(module('nav'));

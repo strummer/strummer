@@ -1,4 +1,4 @@
-// 
+/* Settings - Contains per-account things like Domain, etc */
 
 var settings = angular.module('settings', []);
 
@@ -21,7 +21,7 @@ settings.directive('settings', function() {
         transclude: true,
         scope: { domain: '@'},
         controller: 'settingsController',
-        templateUrl: 'static/nav/settings.html',
+        templateUrl: 'static/nav/settings/settings.html',
         replace: true
     };
 });
