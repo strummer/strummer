@@ -6,29 +6,6 @@ _Note: This is a throwaway directory to start the discussion. Please re-arrange 
 Builder is a web-based tool that gives you instant feedback on your app as you build it. Think of it like your on-site helper to make sure you aren't breaking everything.
 
 
-# Getting Started
-
-To access Builder, hit '~' (like the Quake console!) or click on the icon that appears for signed-in users with the 'Admin' flag set.
-
-
-# Installation
-
-To run the Builder prototype, you need to setup NodeJS (static server) and Karma (test runner).
-
-### Install NodeJS
-
-Follow the instructions at: http://nodejs.org/
-
-### Install depdendencies
-
-1. Open the Builder directory in your terminal: `cd ./builder`
-2. Run npm install to install basic dependencies: `npm install`
-
-## Contributing
-
-To install tests or start hacking on Builder, visit the [Contributing](docs/contributing.md) page.
-
-
 # Features
 
 ## View your Structures
@@ -52,3 +29,26 @@ Swap between your current site and your proposed changes. Make sure everything l
 Update your settings for your site such as Domain Name.
 
 ![Builder - Settings](wireframes/builder-settings-success.png?raw=true)
+
+
+# Getting Started
+
+To access Builder, hit '~' (like the Quake console!) or click on the icon that appears for signed-in users with the 'Admin' flag set.
+
+
+# Installation
+
+To run the Builder prototype, you need to setup NodeJS (static server) and Karma (test runner).
+
+### Install NodeJS
+
+Follow the instructions at: http://nodejs.org/
+
+### Install depdendencies
+
+1. Open the Builder directory in your terminal: `cd ./builder`
+2. Run npm install to install basic dependencies: `npm install`
+
+## Contributing
+
+To install tests or start hacking on Builder, visit the [Contributing](docs/contributing.md) page.
