@@ -8,6 +8,13 @@ beforeEach(module('static/nav/settings/settings.html')); // Need to initialize t
 describe("directive: settings", function() {
     var scope;
 
+    // Setup http mocks for remote http calls
+    beforeEach(inject(function($injector) {
+        $httpBackend = $injector.get('$httpBackend');
+        $httpBackend.when("GET", "static/nav/settings/settings.json")
+            .respond({domain:"www.strummer.io"});
+    }));
+
     // Setup DOM
     var html, element, compiled;
     beforeEach(function() {
@@ -29,8 +36,11 @@ describe("directive: settings", function() {
         ctrl = $controller('settingsController', {$scope: scope, $element: null});
     }));
 
+
     it("Should keep track of a domain on the current scope", inject(function($controller, $rootScope, domainFactory) {
         // Test Controller
+        // console.log(scope.domain);
+        console.log(domainFactory.get);
         expect(scope.domain).toBeDefined();
     }));
     
@@ -73,6 +83,13 @@ describe("factory: domainFactory", function() {
             domainFactory = $injector.get('domainFactory'); // Get an instance of domainFactory we can test
         });
     });
+
+    // Setup http mocks for remote http calls
+    beforeEach(inject(function($injector) {
+        $httpBackend = $injector.get('$httpBackend');
+        $httpBackend.when("GET", "static/nav/settings/settings.json")
+            .respond({value:"goodValue"});
+    }));
 
     it("Should have a variable to reference domains", inject(function() {
         var domain = domainFactory.get();

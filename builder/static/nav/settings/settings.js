@@ -26,7 +26,7 @@ settings.directive('settings', function() {
     };
 });
 
-settings.factory("domainFactory", function() {
+settings.factory("domainFactory", function($http, $log) {
     // Placeholder data model for settings.domain
     // Can swap in other data sources here when ready
 
@@ -34,6 +34,10 @@ settings.factory("domainFactory", function() {
 
     return {
         get: function() {
+            $http.get('static/nav/settings/settings.json').success(function(data) {
+                domain = data;
+                return(domain);
+            });
             return(domain);
         },
         set: function(newValue) {

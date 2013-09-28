@@ -2,8 +2,7 @@
 
 var nav = angular.module('nav', ['settings', 'structure', 'ipsum']);
 
-menuController = function($scope, $element, $log, $httpProvider) {
-    $httpProvider.responseInterceptors.push('ipsumInterceptor');
+menuController = function($scope, $element, $log) {
 
     var panes = $scope.panes = [];
 
@@ -55,4 +54,8 @@ nav.directive('pane', function() {
         templateUrl: 'static/nav/pane.html',
         replace: true
     };
+});
+
+nav.config(function($httpProvider) {
+  $httpProvider.responseInterceptors.push('ipsumInterceptor');
 });
