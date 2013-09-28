@@ -2,6 +2,16 @@
 
 var structure = angular.module('structure', []);
 
+structureController = function($scope, $element, $log, structureFactory) {
+    $scope.structure = structureFactory.get();
+
+    $scope.saveStructure = function() {
+        $scope.structure = structureFactory.set($scope.structure);
+    };
+
+    $scope.log = $log;
+};
+
 structure.directive('structure', function($compile) {
     return {
         restrict: 'E',
@@ -12,14 +22,11 @@ structure.directive('structure', function($compile) {
     };
 });
 
-structureController = function($scope, $element, $log) {
-    $scope.log = $log;
+structure.factory("structureFactory", function() {
+    // Placeholder data model for structures
+    // Can swap in other data sources here when ready
 
-    $scope.delete = function(data) {
-        data.nodes = [];
-    };
-
-    $scope.structure = {
+    var structure = {
         name: "Comments",
         type: "list",
         children: [{
@@ -40,4 +47,14 @@ structureController = function($scope, $element, $log) {
             children: []
         }]
     };
-};
+
+    return {
+        get: function() {
+            return(structure);
+        },
+        set: function(newValue) {
+            structure = newvalue;
+            return(structure);
+        }
+    };
+});
