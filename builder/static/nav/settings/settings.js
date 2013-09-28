@@ -1,4 +1,4 @@
-// 
+/* Settings - Contains per-account things like Domain, etc */
 
 var settings = angular.module('settings', []);
 
