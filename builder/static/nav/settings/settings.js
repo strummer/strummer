@@ -21,7 +21,7 @@ settings.directive('settings', function() {
         transclude: true,
         scope: { domain: '@'},
         controller: 'settingsController',
-        templateUrl: 'static/nav/settings.html',
+        templateUrl: 'static/nav/settings/settings.html',
         replace: true
     };
 });

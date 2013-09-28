@@ -2,7 +2,7 @@
 
 beforeEach(module('settings'));
 
-beforeEach(module('static/nav/settings.html')); // Need to initialize templates
+beforeEach(module('static/nav/settings/settings.html')); // Need to initialize templates
 
 
 describe("directive: settings", function() {

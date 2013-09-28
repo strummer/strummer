@@ -94,7 +94,3 @@ nav.directive('structure', function($compile) {
         templateUrl: 'static/nav/structure.html'
     };
 });
-
-
-
-
