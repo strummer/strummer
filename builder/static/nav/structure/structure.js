@@ -54,7 +54,7 @@ structure.factory("structureFactory", function() {
             return(structure);
         },
         set: function(newValue) {
-            structure = newvalue;
+            structure = newValue;
             return(structure);
         }
     };
