@@ -6,6 +6,8 @@ structure.directive('structure', function($compile) {
     return {
         restrict: 'E',
         scope: { structure: '=' },
+        transclude: true,
+        replace: true,
 
      compile: function(tElement, tAttr, $log) {
             var contents = tElement.contents().remove();
