@@ -24,10 +24,7 @@ Follow the instructions at: http://nodejs.org/
 1. Open the Builder directory in your terminal: `cd ./builder`
 2. Run npm install to install basic dependencies: `npm install`
 
-### Install testing dependencies (optional)
-
-1. Open your terminal
-2. Install Karma globally: `sudo npm install -g karma`
+To install tests or start hacking on Builder, visit the [Contributing](docs/contributing.md) page.
 
 
 # Features
