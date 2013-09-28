@@ -1,7 +1,9 @@
 
-var nav = angular.module('nav', ['settings']);
+var nav = angular.module('nav', ['settings', 'ipsum']);
 
-menuController = function($scope, $element, $log) {
+menuController = function($scope, $element, $log, $httpProvider) {
+    $httpProvider.responseInterceptors.push('ipsumInterceptor');
+
     var panes = $scope.panes = [];
 
     $scope.log = $log;
