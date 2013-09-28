@@ -24,6 +24,8 @@ Follow the instructions at: http://nodejs.org/
 1. Open the Builder directory in your terminal: `cd ./builder`
 2. Run npm install to install basic dependencies: `npm install`
 
+## Contributing
+
 To install tests or start hacking on Builder, visit the [Contributing](docs/contributing.md) page.
 
 
