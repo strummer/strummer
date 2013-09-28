@@ -8,25 +8,16 @@ structure.directive('structure', function($compile) {
         scope: { structure: '=' },
         transclude: true,
         replace: true,
-
-     compile: function(tElement, tAttr, $log) {
-            var contents = tElement.contents().remove();
-            var compiledContents;
-            return function(scope, iElement, iAttr) {
-                if(!compiledContents) {
-                    compiledContents = $compile(contents);
-                }
-                compiledContents(scope, function(clone, scope) {
-                    iElement.append(clone);
-                });
-            };
-        },
         templateUrl: 'static/nav/structure/structure.html'
     };
 });
 
 structureController = function($scope, $element, $log) {
     $scope.log = $log;
+
+    $scope.delete = function(data) {
+        data.nodes = [];
+    };
 
     $scope.structure = {
         name: "Comments",
@@ -39,7 +30,10 @@ structureController = function($scope, $element, $log) {
         }, {
             name: "Content",
             type: "text",
-            children: []
+            children: [{
+                name: "test",
+                children: []
+            }]
         }, {
             name: "Timestamp",
             type: "time",
