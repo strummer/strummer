@@ -36,6 +36,8 @@ Karma's settings are stored in [karma.conf.js](../karma.conf.js), in case you're
 
 Tests will be expected to build against the project's [karma.conf.js](../karma.conf.js) so please issue a [pull request](https://help.github.com/articles/using-pull-requests) if you make any changes.
 
+If you run into problems, see the **FAQ** below for common problems and fixes.
+
 
 # Starting Builder
 
@@ -53,3 +55,42 @@ $ simple-server .
 Builder will be available at: http://localhost:3000/
 
 
+
+# FAQ
+
+## Help, I get an error when I try to run `karma start`!
+
+**Error**
+```
+WARN [preprocess]: Can not load "ng-html2js", it is not registered!
+Perhaps you are missing some plugin?"
+```
+
+**Solution**
+You need to run `npm install` from the builder directory. This will install the additional test dependencies that we use fron npm
+
+
+**Error (Mac OSX)**
+```
+ERROR [launcher]: Cannot start Chrome
+  Can not find the binary /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+  Please set env variable CHROME_BIN
+```
+
+**Solution**
+Karma can't locate your Chrome executable. 
+
+Make sure you have Chrome installed, then set an environment variable to let Karma know where it's located.
+
+For example, you can add the following to your `~/.profile` file:
+```
+export CHROME_BIN="/Applications/Chrome.app/Contents/MacOS/Google Chrome"
+```
+
+After saving the file, run `source ~/.profile` to reload the file and try runnign Karma again.
+
+
+
+## Can't find the answer to your question?
+
+If you don't see the answer to your problem, please [Submit an Issue](https://github.com/strummer/strummer/issues/new) and we'll do our best to help you!
