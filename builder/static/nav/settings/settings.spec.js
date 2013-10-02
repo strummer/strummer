@@ -39,8 +39,6 @@ describe("directive: settings", function() {
 
     it("Should keep track of a domain on the current scope", inject(function($controller, $rootScope, domainFactory) {
         // Test Controller
-        // console.log(scope.domain);
-        console.log(domainFactory.get);
         expect(scope.domain).toBeDefined();
     }));
     
@@ -55,7 +53,10 @@ describe("directive: settings", function() {
         expect(textField.val()).toEqual('');
 
         // Test Controller
-        expect(scope.domain).toEqual(domainFactory.get());
+        domainFactory.get().success(function(data) {
+            expect(scope.domain).toEqual(data);
+        });
+        
     }));
 
 
@@ -67,7 +68,10 @@ describe("directive: settings", function() {
 
         // Test Controller
         expect(scope.domain).toEqual(expectedDomain);
-        expect(domainFactory.get()).toEqual(expectedDomain);
+
+        domainFactory.get().success(function(data) {
+            expect(domainFactory.get()).toEqual(expectedDomain);
+        });
     }));
 
     it("Should display an error if the domain cannot be saved", inject(function($controller, $rootScope) {
@@ -98,17 +102,23 @@ describe("factory: domainFactory", function() {
 
     it("Should return an empty domain by default", inject(function() {
         var expectedDomain = "";
-        var domain = domainFactory.get();
+        var domain;
 
-        expect(domain).toEqual(expectedDomain);
+        domainFactory.get().success(function(data) {
+            domain = data;
+            expect(domain).toEqual(expectedDomain);
+        });
     }));
 
     it("Should set the domain when a string is added", inject(function($controller, $rootScope) {
         var expectedDomain = "strummer.io";
+        var domain;
+
         domainFactory.set(expectedDomain);
 
-        var domain = domainFactory.get();
-
-        expect(domain).toEqual(expectedDomain);
+        domainFactory.get().success(function(data) {
+            domain = data;
+            expect(domain).toEqual(expectedDomain);
+        });
     }));
 });

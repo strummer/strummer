@@ -14,21 +14,17 @@ ipsum.factory('ipsumInterceptor', function($q, $rootScope, $log) {
           $log.log(typeof(value));
           switch(typeof(value)) {
             case "string":
-              $log.log("String: " + value);
               ipsumData[key] = "asjdklfajflkasjlf;jak;fjas";
               break;
             case "integer":
-              $log.log("Int: " + value);
               ipsumData[key] = 18723489712987498.35;
               break;
             default:
-              $log.log("No idea: " + value);
               ipsumData[key] = "???";
               break;
           }
         });
         response.data = ipsumData;
-        $log.log(response.data);
       }
       return response;
     });

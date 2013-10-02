@@ -3,7 +3,11 @@
 var settings = angular.module('settings', []);
 
 settingsController = function($scope, $element, $log, domainFactory) {
-    $scope.domain = domainFactory.get();
+    $scope.domain = "";
+
+    domainFactory.get().success(function(data) {
+        $scope.domain = data.domain;
+    });
 
     $scope.placeholder = "e.g. www.strummer.io";
 
@@ -12,6 +16,8 @@ settingsController = function($scope, $element, $log, domainFactory) {
     };
 
     $scope.log = $log;
+
+    
 };
 
 settings.directive('settings', function() {
@@ -34,11 +40,7 @@ settings.factory("domainFactory", function($http, $log) {
 
     return {
         get: function() {
-            $http.get('static/nav/settings/settings.json').success(function(data) {
-                domain = data;
-                return(domain);
-            });
-            return(domain);
+            return $http.get('static/nav/settings/settings.json');
         },
         set: function(newValue) {
             domain = newValue;
