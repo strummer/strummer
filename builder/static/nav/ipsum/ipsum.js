@@ -16,7 +16,7 @@ ipsum.factory('ipsumInterceptor', function($q, $rootScope, $log) {
             case "string":
               ipsumData[key] = "asjdklfajflkasjlf;jak;fjas";
               break;
-            case "integer":
+            case "number":
               ipsumData[key] = 18723489712987498.35;
               break;
             default:
