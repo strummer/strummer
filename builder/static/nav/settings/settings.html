@@ -1,12 +1,13 @@
 <div class="settings">
     <form title="settings" ng-controller="settingsController">
         <h2>Configure Your Domain</h2>
-        <label>Hostname: 
-        </label>
+        <label>Hostname: </label>
         <input type="text" ng-model="domain" placeholder="{{placeholder}}"/>
-        <label>Error validation goes here
-        </label>
+        <label>Error validation goes here</label>
         <br /><br />
-        <input type="submit"ng-click="saveDomain()"></input>
+        <input type="submit" ng-click="saveDomain()"></input>
     </form>
+    <br /><br />
+    <label>Lorem Ipsum Mode</label>
+    <input type="checkbox" ng-model="ipsumEnabled" ng-change="toggleIpsum()"></input>
 </div>

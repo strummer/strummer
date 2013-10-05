@@ -1,8 +1,9 @@
 /* nav - creates navigation and menu heirarchy */
 
-var nav = angular.module('nav', ['settings', 'structure']);
+var nav = angular.module('nav', ['settings', 'structure', 'ipsum']);
 
-menuController = function($scope, $element, $log) {
+menuController = function($scope, $element, $rootScope, $log) {
+
     var panes = $scope.panes = [];
 
     $scope.log = $log;
@@ -53,4 +54,8 @@ nav.directive('pane', function() {
         templateUrl: 'static/nav/pane.html',
         replace: true
     };
+});
+
+nav.config(function($httpProvider) {
+  $httpProvider.responseInterceptors.push('ipsumInterceptor');
 });

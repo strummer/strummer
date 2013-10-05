@@ -2,13 +2,21 @@
 
 var settings = angular.module('settings', []);
 
-settingsController = function($scope, $element, $log, domainFactory) {
-    $scope.domain = domainFactory.get();
+settingsController = function($scope, $element, $rootScope, $log, domainFactory) {
+    $scope.domain = "";
+
+    domainFactory.get().success(function(data) {
+        $scope.domain = data.domain;
+    });
 
     $scope.placeholder = "e.g. www.strummer.io";
 
     $scope.saveDomain = function() {
         $scope.domain = domainFactory.set($scope.domain);
+    };
+
+    $scope.toggleIpsum = function() {
+        $rootScope.ipsum.enabled = $scope.ipsumEnabled;
     };
 
     $scope.log = $log;
@@ -26,7 +34,7 @@ settings.directive('settings', function() {
     };
 });
 
-settings.factory("domainFactory", function() {
+settings.factory("domainFactory", function($http, $log) {
     // Placeholder data model for settings.domain
     // Can swap in other data sources here when ready
 
@@ -34,7 +42,7 @@ settings.factory("domainFactory", function() {
 
     return {
         get: function() {
-            return(domain);
+            return $http.get('static/nav/settings/settings.json');
         },
         set: function(newValue) {
             domain = newValue;
