@@ -1,0 +1,33 @@
+{
+    "name": "angular-ipsum",
+    "version": "0.0.1",
+    "description": "Override your content with Lorem Ipsum when designing.",
+    "homepage": "https://github.com/strummer/angular-ipsum/",
+    "keywords": [
+        "angularjs",
+        "ipsum",
+        "lorem"
+    ],
+    "author": "Brad Dickason <dickason@gmail.com>",
+    "contributors": [
+        {
+            "name": "Brad Dickason",
+            "email": "dickason@gmail.com"
+        }
+    ],
+    "dependencies": {        
+    },
+    "devDependencies": {
+        "simple-server": "1.0.0",
+        "karma-chrome-launcher": "~0.1.0",
+        "karma-firefox-launcher": "~0.1.0",
+        "karma-script-launcher": "~0.1.0",
+        "karma-ng-html2js-preprocessor": "~0.1.0",
+        "karma-jasmine": "~0.1.3",
+        "karma-requirejs": "~0.1.0",
+        "karma-coffee-preprocessor": "~0.1.0",
+        "karma-phantomjs-launcher": "~0.1.0",
+        "karma": "~0.10.2"
+    },
+    "main": "index"
+}

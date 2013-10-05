@@ -2,9 +2,12 @@
 
 var nav = angular.module('nav', ['settings', 'structure', 'ipsum']);
 
-menuController = function($scope, $element, $log) {
+menuController = function($scope, $element, $rootScope, $log) {
 
     var panes = $scope.panes = [];
+
+    $rootScope.ipsum = {};
+    $rootScope.ipsum.enabled = true;
 
     $scope.log = $log;
     
