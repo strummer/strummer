@@ -2,7 +2,7 @@
 
 var settings = angular.module('settings', []);
 
-settingsController = function($scope, $element, $log, domainFactory) {
+settingsController = function($scope, $element, $rootScope, $log, domainFactory) {
     $scope.domain = "";
 
     domainFactory.get().success(function(data) {
@@ -15,9 +15,11 @@ settingsController = function($scope, $element, $log, domainFactory) {
         $scope.domain = domainFactory.set($scope.domain);
     };
 
-    $scope.log = $log;
+    $scope.toggleIpsum = function() {
+        $rootScope.ipsum.enabled = $scope.ipsumEnabled;
+    };
 
-    
+    $scope.log = $log;
 };
 
 settings.directive('settings', function() {
