@@ -6,8 +6,6 @@ menuController = function($scope, $element, $rootScope, $log) {
 
     var panes = $scope.panes = [];
 
-    $rootScope.ipsum.enabled = true;
-
     $scope.log = $log;
     
     $scope.toggle = function(pane) {
