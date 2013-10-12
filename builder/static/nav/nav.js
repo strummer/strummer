@@ -3,14 +3,13 @@
 var nav = angular.module('nav', ['settings', 'structure', 'ipsum']);
 
 menuController = function($scope, $element, $rootScope, $log, structureFactory) {
-
     var panes = $scope.panes = [];
 
     $scope.log = $log;
     
     if($element) {
+        // When running tests, we don't always have a $element
         structureFactory.add($element[0]);
-        console.log(structureFactory.get());
     }
         
     $scope.toggle = function(pane) {

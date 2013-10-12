@@ -1,0 +1,41 @@
+<!-- Example app to showcase Builder -->
+
+<!-- Simple HTML prototype for Strummer's "Builder" 
+
+More info: https://github.com/strummer/strummer/tree/builder/builder
+
+-->
+
+<!doctype html>
+<html ng-app="example">
+<head>
+
+<!-- We have to initialize root location because angular requires relative paths in angular templates -->
+<base href=".." />
+
+<link rel="stylesheet" href="/static/nav/nav.css">
+
+<!-- JS Libraries -->
+<script src="static/lib/angular.js"></script>
+
+<!-- Application-specific JS -->
+<script src="examples/example.js"></script>
+
+<!-- Builder JS -->
+<script src="/static/nav/nav.js" ></script>
+<script src="/static/nav/settings/settings.js"></script>
+<script src="/static/nav/structure/structure.js"></script>
+<script src="/static/nav/angular-ipsum/ipsum.js"></script>
+<script src="/static/nav/angular-ipsum/ipsums/hipster_lang.js"></script>
+<script src="/static/app.js"></script> <!-- Must include app.js last or else the templates don't load properly -->
+</head>
+
+<body>
+    <builder></builder>
+
+    <section class="content">
+        <IMG SRC="images/example-content.png">
+    </section>
+
+</body>
+</html>
