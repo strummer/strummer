@@ -2,12 +2,17 @@
 
 var nav = angular.module('nav', ['settings', 'structure', 'ipsum']);
 
-menuController = function($scope, $element, $rootScope, $log) {
+menuController = function($scope, $element, $rootScope, $log, structureFactory) {
 
     var panes = $scope.panes = [];
 
     $scope.log = $log;
     
+    if($element) {
+        structureFactory.add($element[0]);
+        console.log(structureFactory.get());
+    }
+        
     $scope.toggle = function(pane) {
         if(pane.selected) {
             pane.selected = false;

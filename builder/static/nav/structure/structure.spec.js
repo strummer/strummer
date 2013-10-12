@@ -58,29 +58,8 @@ describe("factory: structureFactory", function() {
         expect(structure).toBeDefined();
     }));
 
-    it("Should return a placeholder structure by default", inject(function() {
-        var expectedStructure = {
-        name: "Comments",
-        type: "list",
-        children: [{
-            name: "Author",
-            type: "link",
-            link: "authors",
-            children: []
-        }, {
-            name: "Posts",
-            type: "list",
-            children: [{
-                name: "Contents",
-                type: "text",
-                children: []
-            }]
-        }, {
-            name: "Timestamp",
-            type: "time",
-            children: []
-        }]
-    };
+    it("Should return an empty structure by default", inject(function() {
+        var expectedStructure = [];
     
         var structure = structureFactory.get();
 

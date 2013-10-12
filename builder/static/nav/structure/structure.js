@@ -26,35 +26,21 @@ structure.factory("structureFactory", function() {
     // Placeholder data model for structures
     // Can swap in other data sources here when ready
 
-    var structure = {
-        name: "Comments",
-        type: "list",
-        children: [{
-            name: "Author",
-            type: "link",
-            link: "authors",
-            children: []
-        }, {
-            name: "Posts",
-            type: "list",
-            children: [{
-                name: "Contents",
-                type: "text",
-                children: []
-            }]
-        }, {
-            name: "Timestamp",
-            type: "time",
-            children: []
-        }]
-    };
+    var structures = [];
 
     return {
         get: function() {
-            return(structure);
+            return(structures);
         },
         set: function(newValue) {
-            structure = newValue;
+            structures = newValue;
+            return(structure);
+        },
+        add: function(newStructure) {
+            structure = {};
+            // structure.title = newStructure.nodeName;
+
+            structures.push(newStructure);
             return(structure);
         }
     };
